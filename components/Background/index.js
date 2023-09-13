@@ -20,7 +20,7 @@ export default function Background() {
 
             <div className={styles.productionWrapper}>
                 <div className={styles.productionTitleContainer}>
-                    <h2 className={`title ${styles.backgroundTitle}`}>Большой каталог<br /> новых автомобилей</h2>
+                    <h2 className={`title ${styles.backgroundTitle}`}>Изучите Янтарный край<br /> вместе с нами</h2>
                 </div>
                 <div className={styles.productionButtonContainer}>
                     <motion.div
@@ -28,7 +28,7 @@ export default function Background() {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                        <Link href={'/catalog'} className="button">Выбрать свой</Link>
+                        <Link href={'/catalog'} className="button">Выбрать машину</Link>
                     </motion.div>
                 </div>
             </div>
