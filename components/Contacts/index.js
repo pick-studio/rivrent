@@ -89,27 +89,27 @@ export default function Footer() {
                                                 whileHover={{ scale: 1.1 }}
                                                 whileTap={{ scale: 0.9 }}
                                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                                <a href="#" className={`${styles.massengerItem} ${styles.telegram}`} />
+                                                <a href="https://t.me/+79111111150" className={`${styles.massengerItem} ${styles.telegram}`} />
                                             </motion.div>
                                             <motion.div
                                                 className={styles.buttonOrderContainer}
                                                 whileHover={{ scale: 1.1 }}
                                                 whileTap={{ scale: 0.9 }}
                                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                                <a href="#" className={`${styles.massengerItem} ${styles.whatsapp}`} />
+                                                <a href="https://wa.me/79111111150" className={`${styles.massengerItem} ${styles.whatsapp}`} />
                                             </motion.div>
                                             <motion.div
                                                 className={styles.buttonOrderContainer}
                                                 whileHover={{ scale: 1.1 }}
                                                 whileTap={{ scale: 0.9 }}
                                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                                <a href="#" className={`${styles.massengerItem} ${styles.viber}`} />
+                                                <a href="https://msng.link/o/?79111111150=vi" className={`${styles.massengerItem} ${styles.viber}`} />
                                             </motion.div>
                                         </div>
 
                                         <div className={styles.adressContainer}>
                                             <p>Калининград, улица Гагарина 228, офис 4</p>
-                                            <p>Ежедневно с 09:00 до 24:00, на связи 24/7</p>
+                                            <p>Ежедневно с 09:00 до 18:00, на связи 24/7</p>
                                         </div>
 
                                     </div>

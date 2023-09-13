@@ -9,11 +9,6 @@ export default function Background() {
 
     return (
         <section className={styles.production}>
-
-            {/* <video style={{ width: '500px', height: '500px' }} type="video/mp4" autoPlay loop muted>
-                <source src={'https://cloud.mail.ru/public/1zab/dyi6CEB1U'}></source>
-    </video> */}
-
             <video autoPlay muted loop className={styles.video}>
                 <source src="https://rivrent.vercel.app/video/background.mp4" type="video/mp4" />
             </video>
