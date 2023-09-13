@@ -15,7 +15,7 @@ export default function Background() {
     </video> */}
 
             <video autoPlay muted loop className={styles.video}>
-                <source src="https://lesopilca.com/video/background.mp4" type="video/mp4" />
+                <source src="https://rivrent.vercel.app/video/background.mp4" type="video/mp4" />
             </video>
 
             <div className={styles.productionWrapper}>
