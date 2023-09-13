@@ -3029,7 +3029,7 @@ export default async (req, res) => {
     })
 
   } catch (err) {
-    console.log(err);
+    (err);
   }
 
   res.status(200).json(req.body);

@@ -68,9 +68,9 @@ export default function Catalog({ cars }) {
                     <BreadCrumbs array={breadCrumbsCatalog} />
 
                     <div className={styles.list}>
-                        {cars.map((item) => {
+                        {cars.map((item, index) => {
                             return (
-                                <div className={styles.item}>
+                                <div className={styles.item} key={index}>
                                     <Product car={item} catalog={true} />
                                 </div>
                             )

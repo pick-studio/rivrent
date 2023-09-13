@@ -65,8 +65,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
-    console.log(currentItem);
-
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
 
     const [currentPrice, setCurrentPrice] = React.useState();
