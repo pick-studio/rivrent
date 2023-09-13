@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
-import styles from "./breadCrumbs.module.scss";
+import styles from "./BreadCrumbs.module.scss";
 
 export default function BreadCrumbs({ array }) {
     return (

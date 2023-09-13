@@ -71,10 +71,10 @@ export default function Product({ currentItem }) {
     const [activeTab, setActiveTab] = React.useState(3);
 
     const priceButtons = [
-        { buttonName: '1 день', price: currentItem.fields.priceOne },
-        { buttonName: '2 - 3 дня', price: currentItem.fields.priceTwo },
-        { buttonName: '4 - 7 дней', price: currentItem.fields.priceThree },
-        { buttonName: '7 - 29 дней', price: currentItem.fields.priceFour },
+        { buttonName: '1 день', price: currentItem && currentItem.fields.priceOne },
+        { buttonName: '2 - 3 дня', price: currentItem && currentItem.fields.priceTwo },
+        { buttonName: '4 - 7 дней', price: currentItem && currentItem.fields.priceThree },
+        { buttonName: '7 - 29 дней', price: currentItem && currentItem.fields.priceFour },
     ]
 
     React.useEffect(() => {
@@ -113,18 +113,18 @@ export default function Product({ currentItem }) {
         }
     };
 
-    const breadCrumbsCatalog = [{ name: 'каталог', url: '/catalog' }, { name: currentItem.fields.slug, url: '/' }]
+    const breadCrumbsCatalog = [{ name: 'каталог', url: '/catalog' }, { name: currentItem && currentItem.fields.slug, url: '/' }]
 
     return (
         <div>
 
             <Head>
-                <title>{`${currentItem.fields.name} - аренда автомобилей в Калининграде`}</title>
+                <title>{`${currentItem && currentItem.fields.name} - аренда автомобилей в Калининграде`}</title>
                 <meta
                     name="description"
-                    content={`${currentItem.fields.name} - арендовать по выгодной цене для путешествий по Калининграду и области, с доставкой автомобиля до дома`} />
-                <meta property="twitter:description" content={`${currentItem.fields.name} - арендовать по выгодной цене для путешествий по Калининграду и области, с доставкой автомобиля до дома`} />
-                <meta property="og:description" content={`${currentItem.fields.name} - арендовать по выгодной цене для путешествий по Калининграду и области, с доставкой автомобиля до дома`} />
+                    content={`${currentItem && currentItem.fields.name} - арендовать по выгодной цене для путешествий по Калининграду и области, с доставкой автомобиля до дома`} />
+                <meta property="twitter:description" content={`${currentItem && currentItem.fields.name} - арендовать по выгодной цене для путешествий по Калининграду и области, с доставкой автомобиля до дома`} />
+                <meta property="og:description" content={`${currentItem && currentItem.fields.name} - арендовать по выгодной цене для путешествий по Калининграду и области, с доставкой автомобиля до дома`} />
                 <meta
                     name="keywords"
                     content="Аренда автомобилей, Прокат машин, Автопрокат, Калининград, Калининградская область, Авто в аренду, Прокат авто, Дешевая аренда, Аэропорт Калининграда, Долгосрочная аренда, Лучший прокат, Семейная аренда, Автомобили для туристов, Минивэны, Экономичная аренда, Автомобиль на свадьбу, Аренда с водителем, Транспорт в Калининграде, Рент кар, Прокат транспорта."
@@ -133,10 +133,10 @@ export default function Product({ currentItem }) {
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="RIVRENT" />
                 <meta property="og:title" content="Аренда автомобилей в Калининграде и области" />
-                <meta property="og:image" content={`https: ${currentItem.fields.media[0].fields.file.url}`} />
+                <meta property="og:image" content={`https: ${currentItem && currentItem.fields.media[0].fields.file.url}`} />
                 <meta property="og:image:type" content="image/jpg" />
-                <meta property="twitter:image" content={`https: ${currentItem.fields.media[0].fields.file.url}`} />
-                <meta name="twitter:image" content={`https: ${currentItem.fields.media[0].fields.file.url}`} />
+                <meta property="twitter:image" content={`https: ${currentItem && currentItem.fields.media[0].fields.file.url}`} />
+                <meta name="twitter:image" content={`https: ${currentItem && currentItem.fields.media[0].fields.file.url}`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta content="summary_large_image" name="twitter:card" />
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -158,7 +158,7 @@ export default function Product({ currentItem }) {
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                    <button className={styles.buttonVideo} onClick={() => openVideoPopup(currentItem.fields.youtubeVideo)}>Видеообзор</button>
+                                    <button className={styles.buttonVideo} onClick={() => openVideoPopup(currentItem && currentItem.fields.youtubeVideo)}>Видеообзор</button>
                                 </motion.div>
                             </div>
 
@@ -171,7 +171,7 @@ export default function Product({ currentItem }) {
                                 loop={true}
                                 className="swiperCard"
                             >
-                                {currentItem.fields.media.map((item, index) => {
+                                {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
                                         <SwiperSlide className={styles.swiperSlide} key={index}>
                                             <div className="card-card-img-container">
@@ -187,7 +187,7 @@ export default function Product({ currentItem }) {
                                     );
                                 })}
 
-                                {currentItem.fields.media.length > 1 &&
+                                {currentItem && currentItem.fields.media.length > 1 &&
                                     <>
                                         <motion.div
                                             className={`${styles.buttonArrowContainer} ${styles.left}`}
@@ -250,7 +250,7 @@ export default function Product({ currentItem }) {
                                 modules={[Navigation, Thumbs]}
                                 className="swiperThumbs"
                             >
-                                {currentItem.fields.media.map((item, index) => {
+                                {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
                                         <SwiperSlide className={styles.swiperThumbSlide} key={index}>
                                             <div className="card-card-img-container">
@@ -273,8 +273,8 @@ export default function Product({ currentItem }) {
                             <div className={styles.cardDescriptionContainer}>
 
                                 <div className={styles.titleContainer}>
-                                    <h1 className="title">{currentItem.fields.name}</h1>
-                                    {currentItem.fields.maxEquipment &&
+                                    <h1 className="title">{currentItem && currentItem.fields.name}</h1>
+                                    {currentItem && currentItem.fields.maxEquipment &&
                                         <span className={styles.signature}>Максимальная комплектация</span>
                                     }
                                 </div>
@@ -310,20 +310,20 @@ export default function Product({ currentItem }) {
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.9 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                        <button className="button" onClick={() => openPopup(currentItem.fields.name)}>Забронировать</button>
+                                        <button className="button" onClick={() => openPopup(currentItem && currentItem.fields.name)}>Забронировать</button>
                                     </motion.div>
                                 </div>
 
                                 <div className={styles.descriptionContainer}>
                                     {/* <h3 className={styles.miniTitle}>Описание:</h3> */}
-                                    <p className={styles.cardProductText}>{currentItem.fields.description}</p>
+                                    <p className={styles.cardProductText}>{currentItem && currentItem.fields.description}</p>
                                 </div>
 
                                 <div className={styles.equipmentContainer}>
                                     <h3 className={styles.miniTitle}>Преимущества автомобиля:</h3>
 
                                     <ul className={styles.equipmentList}>
-                                        {currentItem.fields.equipment.map((item, index) => {
+                                        {currentItem && currentItem.fields.equipment.map((item, index) => {
 
                                             return (
                                                 <li className={styles.equipmentItem} key={index}>
@@ -335,28 +335,29 @@ export default function Product({ currentItem }) {
 
                                 </div>
 
-                                <div className={styles.equipmentContainer}>
-                                    <h3 className={styles.miniTitle}>Технические характеристики:</h3>
-                                    <li className={styles.equipmentTechItem}>
-                                        Год выпуска: {currentItem.fields.year}
-                                    </li>
-                                    <li className={styles.equipmentTechItem}>
-                                        Коробка: {currentItem.fields.transmission ? 'Автомат' : 'Механика'}
-                                    </li>
-                                    <li className={styles.equipmentTechItem}>
-                                        Объем двигателя: {currentItem.fields.engineCapacity} л
-                                    </li>
-                                    <li className={styles.equipmentTechItem}>
-                                        Мощность двигателя: {currentItem.fields.powerEngine} лс
-                                    </li>
-                                    <li className={styles.equipmentTechItem}>
-                                        Количество дверей: {currentItem.fields.doorNumber}
-                                    </li>
-                                    <li className={styles.equipmentTechItem}>
-                                        Привод: {currentItem.fields.driveUnit}
-                                    </li>
-
-                                </div>
+                                {currentItem &&
+                                    <div className={styles.equipmentContainer}>
+                                        <h3 className={styles.miniTitle}>Технические характеристики:</h3>
+                                        <li className={styles.equipmentTechItem}>
+                                            Год выпуска: {currentItem.fields.year}
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Коробка: {currentItem.fields.transmission ? 'Автомат' : 'Механика'}
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Объем двигателя: {currentItem.fields.engineCapacity} л
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Мощность двигателя: {currentItem.fields.powerEngine} лс
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Количество дверей: {currentItem.fields.doorNumber}
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Привод: {currentItem.fields.driveUnit}
+                                        </li>
+                                    </div>
+                                }
 
                             </div>
                         </div>

@@ -5,8 +5,6 @@ import Additions from '../../components/Additions';
 import Contacts from '../../components/Contacts';
 import Process from '../../components/Process';
 
-const breadCrumbsCatalog = { name: 'услуги', url: '/services' }
-
 export default function Services() {
     return (
         <>

@@ -54,15 +54,6 @@ const filterButtonsArray = [
 ]
 
 export default function Popular({ carList }) {
-
-    const [currentCars, setCurrentCars] = React.useState([]);
-    // const [activeFilterButton, setActiveFilterButton] = React.useState(0);
-    // const [defaultKey, setDefaultKey] = React.useState(0);
-
-    React.useEffect(() => {
-        setCurrentCars(carList);
-    }, [])
-
     // const filtrationHandler = (category, index) => {
     //     setActiveFilterButton(index);
     //     setDefaultKey(defaultKey + 1);
@@ -150,7 +141,7 @@ export default function Popular({ carList }) {
                     } */}
 
                 </div>
-                {currentCars &&
+                {carList &&
 
                     <Swiper
                         {...params}
@@ -184,7 +175,7 @@ export default function Popular({ carList }) {
                         }}
                     >
                         {/* Отображаем товары с логикой работы с корзиной */}
-                        {currentCars.map((item, index) => {
+                        {carList.map((item, index) => {
                             return (
                                 <SwiperSlide key={index}>
                                     <Product car={item} catalog={false} />
