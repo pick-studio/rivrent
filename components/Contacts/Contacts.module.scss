@@ -1,0 +1,492 @@
+.footer {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  overflow: hidden;
+}
+
+.footerWrapper {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mobileTitle {
+  display: none;
+}
+
+.form {
+  position: relative;
+  margin-left: auto;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: -150px;
+  width: 175px;
+  height: 175px;
+
+  background-image: url("../../public/img/contacts/decorative.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  z-index: -1;
+}
+
+.form .input {
+  margin-bottom: 20px;
+  padding: 20px 20px 20px 0px;
+  font-size: 18px;
+  background: 0px;
+  border: none;
+  outline: none;
+  color: #111;
+  border-bottom: 1px solid #d5d5d5;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+.form .input:hover,
+.form .input:focus {
+  border-bottom: 1px solid #111;
+}
+
+.form .input::placeholder {
+  color: #999;
+}
+
+.form .button {
+  padding: 18px;
+  font-size: 18px;
+  border: 1px solid #111;
+  background: none;
+  color: #111;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.form .button:hover {
+  background: #111;
+  color: #333;
+}
+
+.form .button:active {
+  background: #111;
+  color: #333;
+}
+
+.form .signature {
+  margin-bottom: 50px;
+  color: #999;
+  font-size: 14px;
+}
+
+.footerLeft,
+.footerRight {
+  position: relative;
+  width: 50%;
+  text-align: left;
+}
+
+.footerLeft {
+  max-width: 350px;
+  min-width: 340px;
+}
+
+.footerLeftWrapper {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.footerRight {
+  padding-left: 80px;
+}
+
+.footerRightWrapper {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.footerRight h2 {
+  margin: 0px;
+  margin-left: auto;
+  font-size: 32.5px;
+  margin-bottom: 55px;
+  text-transform: uppercase;
+}
+
+.footerLeft a {
+  transition: 0.2s;
+}
+
+.titleContainer {
+  margin-bottom: 30px;
+}
+
+.footerLeft h2 {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.textContainer {
+  margin-bottom: 35px;
+}
+
+.footerContacts a {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.footerContacts a:hover {
+  color: rgb(236, 103, 44);
+}
+
+.footerContacts a:active {
+  color: rgb(250, 226, 211);
+}
+
+.footerContactsPhone {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.footerContactsPhone .footerContactsPhoneTime {
+  position: absolute;
+  left: 0px;
+  bottom: -20px;
+  font-size: 14px;
+}
+
+.footerContactsPhone .footerContactsPhoneCity {
+  position: absolute;
+  left: 0px;
+  top: -18px;
+  font-size: 14px;
+}
+
+.footerRight p {
+  margin: 0;
+  margin-bottom: 32.5px;
+}
+
+.footerRightList {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.footerRightList a {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: calc(50% - 5px);
+  background: none;
+  color: #111;
+  border: 1px solid #333;
+  color: #333;
+  box-sizing: border-box;
+  text-align: center;
+
+  transition: 0.2s;
+}
+
+.footerRightList a:after {
+  content: "";
+  position: absolute;
+  left: 12.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 27.5px;
+  height: 27.5px;
+}
+
+// .footerRightList a:nth-child(1):after {
+//     background-image: url("../../public/img/social/telegram-white.svg");
+//     width: 22.5px;
+//     height: 22.5px;
+// }
+
+// .footerRightList a:nth-child(2):after {
+//     background-image: url("../../public/img/social/whatsapp-white.svg");
+//     width: 24px;
+//     height: 24px;
+// }
+
+// .footerRightList a:nth-child(3):after {
+//     background-image: url("../../public/img/social/viber-white.svg");
+//     width: 22.5px;
+//     height: 22.5px;
+// }
+
+// .footerRightList a:nth-child(4):after {
+//     background-image: url("../../public/img/social/vk-white.svg");
+//     width: 24px;
+//     height: 24px;
+// }
+
+.footerRightList a:hover {
+  opacity: 0.6;
+}
+
+.footerBottom {
+  padding: 25px 0px;
+  background: #333;
+}
+
+.footerBottomWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.phoneContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneContainer a {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #111;
+}
+
+.phoneContainer a:last-child {
+  margin: 0px;
+}
+
+.phone {
+  margin-right: 25px;
+}
+
+.footer .social:first-child {
+  margin-right: 20px;
+}
+
+// .footerContacts .social {
+//   margin-right: 20px;
+//   display: block;
+//   width: 25px;
+//   height: 25px;
+
+//   background-image: url("../../public/img/social/telegram-icon.svg");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
+
+// .footerContacts .social:last-child {
+//   background-image: url("../../public/img/social/whatsapp-icon.svg");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
+
+.footerContacts .social:hover {
+  opacity: 0.8;
+}
+
+.footerContacts .social:active {
+  opacity: 0.4;
+}
+
+.massengerList {
+  margin: 0px;
+  margin-bottom: 35px;
+  padding: 0px;
+  display: flex;
+}
+
+.massengerItem {
+  margin-right: 20px;
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: #111;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+}
+
+.massengerItem::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 15px;
+  height: 15px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.telegram {
+  background-image: url("../../public/img/icons/telegram-black.svg");
+}
+
+.whatsapp {
+  background-image: url("../../public/img/icons/whatsapp-black.svg");
+}
+
+.viber {
+  background-image: url("../../public/img/icons/viber-black.svg");
+}
+
+.adressContainer p {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.adressContainer p:last-child {
+  margin: 0px;
+}
+
+.buttonOrderContainer {
+  display: inline-block;
+  width: fit-content;
+}
+
+@media screen and (min-width: 0px) and (max-width: 990px) {
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .footerWrapper a {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .footerWrapper {
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+
+  .footerLeft,
+  .footerRight {
+    width: 100%;
+    text-align: left;
+  }
+
+  .footerLeft {
+    margin-bottom: 15px;
+    padding: 0px;
+  }
+
+  .footerLeft h2 {
+    margin-bottom: 10px;
+  }
+
+  .footerRight h2 {
+    margin-bottom: 25px;
+  }
+
+  .footerRight {
+    padding: 50px 0;
+    padding-left: 0px;
+  }
+
+  .footerLeft::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 99%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .form {
+    margin-left: 0px;
+  }
+
+  .footerRight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 99%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .mobileTitle {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .footer {
+    margin-top: 20px;
+    padding-top: 40px;
+  }
+
+  .footerContacts a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .footerContacts span {
+    display: inline-block;
+  }
+
+  .footerLeft h2,
+  .footerRight h2 {
+    font-size: 28px;
+  }
+
+  .footerRight p {
+    margin-bottom: 15px;
+  }
+
+  .massengerItem {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footerRightList a {
+    text-align: left;
+    padding-left: 50px;
+    border-radius: 15px;
+  }
+
+  .footerBottomWrapper .signature {
+    font-size: 14px;
+  }
+
+  .form::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: -85px;
+  }
+
+  .titleContainer {
+    margin-bottom: 25px;
+  }
+}

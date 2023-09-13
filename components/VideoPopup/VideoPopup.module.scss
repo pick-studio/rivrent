@@ -1,0 +1,122 @@
+.videoPopup {
+  display: flex;
+
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.videoPopupOverlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.videoPopupButton {
+  position: absolute;
+
+  right: 25px;
+  top: 25px;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+
+  z-index: 10;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.videoPopupButton::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  width: 2px;
+  height: 50%;
+  background: #333;
+
+  transition: 0.2s;
+}
+
+.videoPopupButton:hover {
+  opacity: 0.8;
+}
+
+.videoPopupButton::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  width: 2px;
+  height: 50%;
+  background: #333;
+
+  transition: 0.2s;
+}
+
+.videoPopupPlayer {
+  position: relative;
+  margin: auto;
+  width: 75vw !important;
+  height: 75vh !important;
+  background: #000000;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  z-index: 5;
+}
+
+.videoPopupPlayer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(75px);
+  background-color: #1f1f1f;
+  animation: skeleton-background 1.5s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes skeleton-background {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 680px) {
+  .videoPopupPlayer {
+    position: relative;
+    margin: auto;
+    width: 95vw !important;
+    max-height: 250px;
+    background: #000000;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    z-index: 5;
+  }
+}

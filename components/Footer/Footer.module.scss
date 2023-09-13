@@ -1,0 +1,66 @@
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #111;
+}
+
+.footerWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.information {
+  max-width: 250px;
+}
+
+.information span,
+.information p {
+  color: #fff;
+  font-weight: 500;
+}
+
+.information span {
+  margin-bottom: 65px;
+  display: block;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.information p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.menu {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.menu li {
+  margin-bottom: 20px;
+}
+
+.menu li:last-child {
+  margin-bottom: 0px;
+}
+
+.menu .link {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .footer {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .information span {
+    font-size: 16px;
+  }
+}

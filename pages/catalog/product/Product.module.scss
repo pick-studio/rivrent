@@ -1,0 +1,354 @@
+.product {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 380px;
+  display: inline-block;
+  border-radius: 37px !important;
+  transition: 0.2s;
+
+  background: #999;
+
+  overflow: hidden;
+
+  animation-name: appearance;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: both;
+
+  cursor: pointer;
+}
+
+.productCatalog .product {
+  height: 330px;
+}
+
+.equipment {
+  position: absolute;
+  padding: 10px 15px;
+  top: 25px;
+  left: 25px;
+  font-size: 14px;
+  border-radius: 25px;
+  background: #fff;
+  color: #111;
+  z-index: 100;
+}
+
+.cardTitleWrapper {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  left: 50px;
+  bottom: 25px;
+  transform: translateY(0px);
+
+  transition: 0.4s;
+}
+
+.product:hover .clickIcon {
+  transform: translateX(0px) translateY(0px);
+}
+
+.clickIcon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 65px;
+  height: 65px;
+  transform: translateX(100px) translateY(-100px);
+  border-radius: 50%;
+  background: #111;
+  z-index: 10;
+
+  transition: 0.4s;
+}
+
+.clickIcon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("../../../public/img/arrows/arrow-click.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.imageCartContainer {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+  height: 425px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 35px;
+  overflow: hidden;
+
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.product:hover .image {
+  transform: scale(1.06);
+}
+
+.buttonContainer {
+  margin-left: auto;
+  width: fit-content;
+}
+
+.cardPopup h3,
+.cardPopup p {
+  margin: 0px;
+}
+
+.cardTitle,
+.cardText {
+  margin: 0px;
+}
+
+.cardTitle {
+  margin-bottom: 10px;
+}
+
+.popularButton {
+  display: inline-block;
+  margin: auto;
+  font-size: 16px;
+  padding: 20px 20px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.swiperThumbs {
+  position: absolute;
+  display: block;
+  min-width: 500px;
+  min-height: 500px;
+  z-index: 500;
+}
+
+.swiperThumbSlide {
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1200px) {
+  .productCatalog .product {
+    height: 300px;
+  }
+
+  .productCatalog .product {
+    border-radius: 25px !important;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .cardTitleWrapper {
+    padding: 0px;
+  }
+
+  .productCatalog .cardTitle,
+  .productCatalog .cardText {
+    margin: 0px;
+    font-size: 14px;
+  }
+
+  .productCatalog .cardTitle {
+    font-size: 16px;
+  }
+
+  .productCatalog .cardTitle {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 900px) {
+  .catalog {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+
+  .product {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 320px;
+  }
+
+  .productCatalog .product {
+    height: 250px;
+  }
+
+  .productCatalog .popularButton {
+    position: relative;
+    padding: 0px;
+    width: 55px;
+    height: 55px;
+    font-size: 0px;
+    border-radius: 20px;
+
+    cursor: pointer;
+  }
+
+  .productCatalog .popularButton::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-image: url("../../../public/img/popular/key.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .productCatalog .product {
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .productCatalog .product {
+    height: 150px;
+  }
+
+  .titleBlock {
+    margin-bottom: 30px;
+  }
+
+  .product {
+    height: 330px;
+  }
+
+  .productCatalog {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardTitleWrapper {
+    left: 25px;
+    bottom: 25px;
+    padding: 0px;
+  }
+
+  .productCatalog .cardTitleWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .productCatalog .popularButton {
+    width: 100%;
+
+    cursor: pointer;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardText {
+    font-size: 14px;
+  }
+
+  .cardPopup p {
+    margin-bottom: 30px;
+  }
+
+  .product {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 260px;
+  }
+
+  .productCatalog .equipment {
+    display: none;
+  }
+
+  .productCatalog .cardTitleContainer {
+    width: 100%;
+  }
+
+  .productCatalog .cardTitle {
+    margin-bottom: 5px;
+  }
+
+  .equipment {
+    top: 20px;
+    left: 25px;
+    font-size: 12px;
+    bottom: unset;
+  }
+
+  .clickIcon {
+    display: none;
+  }
+
+  .popularButton {
+    position: relative;
+    padding: 0px;
+    width: 55px;
+    height: 55px;
+    font-size: 0px;
+    border-radius: 15px;
+
+    cursor: pointer;
+  }
+
+  .popularButton::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-image: url("../../../public/img/popular/key.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .productCatalog .buttonContainer {
+    margin-top: 15px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .productCatalog .popularButton {
+    font-size: 14px;
+  }
+
+  .productCatalog .popularButton::after {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .product {
+    height: 220px;
+  }
+}

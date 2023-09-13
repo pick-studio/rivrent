@@ -1,0 +1,592 @@
+.catalog {
+  position: relative;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  top: 0px;
+  border-radius: 50px;
+  background: #fff;
+  overflow: hidden;
+  z-index: 500;
+}
+
+.subTitle {
+  color: #111;
+  font-size: 20px;
+}
+
+.list {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  background: #f8ad17;
+  list-style: none;
+  border-radius: 5px;
+}
+
+.titleBlock {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.popupTitleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.textContainer {
+  padding: 15px;
+}
+
+.text {
+  font-size: 24px;
+}
+
+.cardPopup h3,
+.cardPopup p {
+  margin: 0px;
+}
+
+.cardPopup h3 {
+  margin-bottom: 15px;
+}
+
+.cardPopup p {
+  max-width: 400px;
+  margin-bottom: 40px;
+  line-height: 24px;
+}
+
+.popupPriceText {
+  position: relative;
+  top: 10px;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.cardTitleWrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 50px;
+  bottom: 25px;
+  transform: translateY(0px);
+
+  transition: 0.4s;
+}
+
+.cardTitle {
+  max-width: 270px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+
+  transition: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.cardText {
+  opacity: 0;
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+
+  transition: 0.4s;
+}
+
+.text {
+  margin: 0px;
+  font-size: 14px;
+}
+
+.arrows {
+  display: flex;
+}
+
+.cardOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.listCharacteristics {
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.listCharacteristics li {
+  margin-left: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 14px;
+}
+
+.listCharacteristics li::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #111;
+}
+
+.cardPopup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.cardContainer {
+  height: 100vh;
+}
+
+.product {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: inline-block;
+  border-radius: 37px !important;
+  transition: 0.2s;
+
+  background: #999;
+
+  outline: 1px solid #ececec;
+  outline-offset: 5px;
+  overflow: hidden;
+
+  animation-name: appearance;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: both;
+
+  cursor: pointer;
+}
+
+.product:hover .cardTitleWrapper {
+  transform: translateY(-25px);
+}
+
+.product:hover .cardText {
+  opacity: 1;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.imageCartContainer {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+  height: 425px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.imageCart {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 35px;
+  overflow: hidden;
+
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.product:hover .image {
+  transform: scale(1.06);
+}
+
+.imageBackground {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 35px;
+}
+
+.list {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.item {
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  background: #f8ad17;
+  list-style: none;
+  border-radius: 5px;
+}
+
+.text {
+  margin: 0px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.cardOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+  z-index: 500;
+}
+
+.cardPopup {
+  padding: 50px;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.cardPopup::-webkit-scrollbar {
+  width: 0;
+}
+
+.cardContainer {
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.closeButton {
+  position: absolute;
+  padding: 28px;
+  top: 45px;
+  right: 45px;
+  font-size: 35px;
+  color: #333;
+
+  transition: 0.4s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.closeButton::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  width: 40%;
+  height: 2px;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  background: #989898;
+}
+
+.closeButton::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  width: 40%;
+  height: 2px;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  background: #989898;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+}
+
+.height {
+  height: 300px;
+}
+
+.buttonContainer {
+  margin-left: auto;
+  width: fit-content;
+}
+
+.button {
+  display: inline-block;
+  margin: auto;
+  font-size: 16px;
+  padding: 20px 60px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.input {
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #a2a2a2;
+  color: #111;
+  font-size: 26px;
+  font-weight: 500;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #a2a2a2;
+}
+
+.signature {
+  margin-bottom: 40px;
+  font-size: 12px;
+  color: #a2a2a2;
+}
+
+.timeSignature {
+  font-size: 20px;
+}
+
+.buttonOrderContainer {
+  display: inline-block;
+  width: fit-content;
+}
+
+.image {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  right: -150px;
+  width: 430px;
+  height: 430px;
+  background-image: url("../../public/img/popup/background.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 900px) {
+  .catalog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .imageCartContainer {
+    height: 200px;
+  }
+
+  .imageCartContainer {
+    margin-bottom: 10px;
+  }
+
+  .cardPopup {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .image {
+    display: none;
+  }
+
+  .title {
+    margin: 0px;
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+
+  .cardPopup {
+    padding: 35px;
+    max-width: 450px;
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .closeButton {
+    top: 25px;
+    right: 25px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .titleBlock {
+    margin-bottom: 30px;
+  }
+
+  .subTitle {
+    font-size: 16px;
+  }
+
+  .product {
+    height: 330px;
+  }
+
+  .label {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .timeSignature {
+    font-size: 16px;
+  }
+
+  .cardText {
+    opacity: 1;
+    transition: 0.4s;
+  }
+
+  .cardPopup {
+    padding: 25px;
+    max-width: 350px;
+    width: 95%;
+    box-sizing: border-box;
+  }
+
+  .cardPopup h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .cardPopup h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  .popupPriceText {
+    top: 6px;
+    font-size: 19px;
+  }
+
+  .signature {
+    margin-bottom: 25px;
+  }
+
+  .closeButton {
+    padding: 22.5px;
+    top: 15px;
+    right: 20px;
+  }
+
+  .cardTitleWrapper {
+    left: 25px;
+    bottom: 25px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardText {
+    font-size: 12px;
+  }
+
+  .cardPopup p {
+    margin-bottom: 20px;
+  }
+
+  .product:hover .cardTitleWrapper {
+    transform: translateY(0px);
+  }
+
+  .buttonContainer {
+    margin: auto;
+  }
+}

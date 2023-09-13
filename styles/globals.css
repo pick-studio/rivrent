@@ -1,0 +1,339 @@
+/* Шрифты */
+
+.powered-link[data-v-b51c4d68],
+.powered-link[data-v-b51c4d68]:focus,
+.powered-link[data-v-b51c4d68]:visited {
+    display: none;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat-Bold.ttf") format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat-SemiBold.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Шрифты */
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 360px;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1620px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+/* Кнопка */
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 20px 25px;
+    padding-right: 60px;
+    background: #ff9300;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #c07a00;
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 1px);
+    transform: translateY(-50%);
+    right: 20px;
+    width: 25px;
+    height: 25px;
+
+    background-image: url("../public/img/arrows/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Кнопка */
+
+/* Кнопка отправки заказа */
+
+.button-order {
+    min-width: 200px;
+    position: relative;
+    height: 55px;
+    padding: 15px 15px;
+    background: #ff9300;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.button-order .button-order__standart-state,
+.button-order .button-order__delivery-state,
+.button-order .button-order__success-state,
+.button-order .button-order__last-state,
+.button-order__error-state {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    transition: 0.5s;
+}
+
+.button-order__delivery-state {
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button-order__last-state {
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button-order__error-state {
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button-order__success-state {
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button--delivery .button-order__standart-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button--delivery .button-order__delivery-state {
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button--success .button-order__delivery-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button--success .button-order__standart-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+.button--success .button-order__last-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+.button--success .button-order__success-state {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button--last .button-order__delivery-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button--last .button-order__standart-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+.button--last .button-order__success-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button--last .button-order__last-state {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button--error .button-order__delivery-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button--error .button-order__standart-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.button--error .button-order__error-state {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button-order .signature {
+    margin-bottom: 10px;
+    display: block;
+    text-transform: uppercase;
+    color: rgb(199, 199, 199);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.button-order:disabled {
+    background: #ff9300;
+    cursor: default;
+}
+
+.yandex-map {
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateY(-500px);
+}
+
+/* Кнопка отправки заказа */
+
+/* Заголовки */
+
+.title {
+    margin: 0px;
+    padding: 0px;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.subTitle {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #888888;
+}
+
+/* Заголовки */
+
+@keyframes {
+    from {
+        transform: translateY(-10px) scale(1.02);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 900px) {
+    .container {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .title {
+        margin: 0px;
+        padding: 0px;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .subTitle {
+        margin: 0px;
+        padding: 0px;
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .title {
+        margin: 0px;
+        padding: 0px;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .subTitle {
+        margin: 0px;
+        padding: 0px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+    .title {
+        font-size: 24px;
+    }
+}

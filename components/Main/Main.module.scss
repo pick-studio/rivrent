@@ -1,0 +1,269 @@
+.main {
+  position: relative;
+  margin: auto;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 1400px;
+  background: url("../../public/img/main/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.mainWrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.mainTextContainer {
+  max-width: 520px;
+  margin: auto 0;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+
+  z-index: 50;
+}
+
+.mainTextContainer h1 {
+  margin: 0px;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.mainTextContainer p {
+  margin-bottom: 60px;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.mainContainer {
+  height: 100%;
+}
+
+.mainButton {
+  display: inline-block;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.buttonContainer {
+  display: inline-block;
+}
+
+.massengerList {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.massengerItem {
+  position: relative;
+  margin-bottom: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-image: url("../../public/img/icons/telegram.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+
+  transition: 0.2s;
+}
+
+.massengerItem.telegram {
+  background-image: url("../../public/img/icons/telegram.svg");
+  animation-duration: 0.6s;
+  animation-delay: 0.4s;
+}
+
+.massengerItem.whatsapp {
+  background-image: url("../../public/img/icons/whatsapp.svg");
+  animation-duration: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.massengerItem.viber {
+  background-image: url("../../public/img/icons/viber.svg");
+  animation-duration: 0.6s;
+  animation-delay: 0.8s;
+}
+
+@keyframes startAnimate {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.massengerItem span {
+  opacity: 0;
+  display: inline-block;
+  position: absolute;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 500;
+
+  transition: 0.4s;
+}
+
+.massengerItem:hover {
+  opacity: 0.8;
+}
+
+.massengerItem:hover span {
+  right: 20px;
+  opacity: 1;
+}
+
+.phoneMobileLink {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  left: 0px;
+  top: 90px;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 500;
+  z-index: 5;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1400px) {
+  .main {
+    margin: auto;
+    max-width: 1600px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1400px) {
+  .main {
+    margin: auto;
+    max-width: 1400px;
+    height: 800px;
+  }
+}
+
+// @media screen and (min-width: 0px) and (max-width: 1120px) {
+//   .main {
+//     background-position: -180px;
+//   }
+// }
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .mainTextContainer h1 {
+    font-size: 32px;
+  }
+
+  .mainTextContainer {
+    max-width: 380px;
+  }
+
+  .mainTextContainer p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .mainTextContainer {
+    max-width: 380px;
+  }
+
+  .mainTextContainer h2 {
+    margin: 0px;
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .main {
+    position: relative;
+    height: 650px;
+    // background-position: -250px;
+  }
+
+  .phoneMobileLink {
+    display: block;
+  }
+
+  .mainTextContainer h1 {
+    margin: 0px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .mainTextContainer {
+    max-width: 320px;
+  }
+
+  .mainTextContainer h2 {
+    margin: 0px;
+    font-size: 23px;
+  }
+
+  .mainTextContainer {
+    position: relative;
+    top: 30px;
+    z-index: 5;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .massengerList {
+    bottom: 10px;
+    top: unset;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    z-index: 5;
+  }
+
+  .massengerItem {
+    margin: 0px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .mainTextContainer h1 {
+    font-size: 26px;
+  }
+
+  .mainTextContainer p {
+    font-size: 16px;
+  }
+}

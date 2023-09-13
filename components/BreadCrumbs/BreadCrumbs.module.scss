@@ -1,0 +1,103 @@
+/* breadcrumbs */
+
+.breadCrumbs {
+  margin-bottom: 30px;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+}
+
+@keyframes startAnimate {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.breadCrumbs .breadCrumbsItem {
+  position: relative;
+  margin-right: 12px;
+  padding-right: 22.5px;
+  text-decoration: none;
+  color: #666;
+
+  transition: 0.2s;
+}
+
+.breadCrumbs .breadCrumbsItem:hover {
+  color: #333;
+}
+
+// .breadCrumbs .breadCrumbsItem:last-child {
+//   cursor: default;
+// }
+
+.breadCrumbs .breadCrumbsItem:last-child:hover {
+  color: #333;
+}
+
+.breadCrumbsItem::after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 1px);
+  right: 0px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-image: url("../../public/img/bread-crumbs/arrow.svg");
+}
+
+.breadCrumbs .breadCrumbsItem:last-child.breadCrumbsItem::after {
+  display: none;
+}
+
+.breadCrumbs .breadCrumbsItem:last-child:hover {
+  color: #666;
+}
+
+.breadCrumbsItem {
+  cursor: pointer;
+}
+
+.noLink {
+  cursor: default;
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .breadCrumbs {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .breadCrumbs {
+    margin-bottom: 23px;
+  }
+
+  .breadCrumbs .breadCrumbsItem {
+    font-size: 16px;
+    margin-right: 8px;
+    padding-right: 15.5px;
+    word-break: break-all;
+  }
+
+  .breadCrumbsItem::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-image: url("../../public/img/bread-crumbs/arrow.svg");
+  }
+}
+
+/* breadcrumbs */

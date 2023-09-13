@@ -1,0 +1,477 @@
+.advantages {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.titleContainer {
+  margin: auto;
+  max-width: 600px;
+  margin-bottom: 75px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  padding: 0px;
+  margin: 0px;
+  font-size: 32px;
+  color: #3a3f5c;
+  text-align: center;
+}
+
+.text {
+  max-width: 550px;
+  color: #3a3f5c;
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.cardProductAdvantagesImageContainer {
+  position: relative;
+}
+
+.cardProductAdvantagesImage {
+  position: relative;
+  left: -5px;
+  max-height: 700px;
+  width: auto;
+  max-width: 520px;
+  height: auto;
+  text-align: center;
+
+  animation-name: soaring;
+  animation-delay: 1s;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.cardProductAdvantagesImageContainer::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 500px;
+  height: 500px;
+  background: #111;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.cardProductAdvantagesList {
+  max-width: 1300px;
+  margin: auto;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  animation-name: showProduct;
+  animation-delay: 0.6s;
+  animation-duration: 1.8s;
+  animation-fill-mode: both;
+}
+
+.cardProductAdvantagesItemContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.cardProductAdvantagesItemContainerLeft {
+  text-align: right;
+}
+
+.cardProductAdvantagesItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 40px;
+  position: relative;
+  width: 260px;
+}
+
+.cardProductAdvantagesItemText {
+  margin: 0px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 100;
+  color: #636363;
+  text-align: center;
+}
+
+.cardProductAdvantagesItemContainerLeft
+  .cardProductAdvantagesItem
+  .cardProductAdvantagesItemLine
+  .cardProductAdvantagesItemPoint {
+  right: 0;
+  left: unset;
+}
+
+.cardProductAdvantages-image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.cardProductAdvantagesItem-title {
+  font-family: Corinthia;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.cardProductAdvantagesItem-text {
+  color: #888;
+}
+
+.cardProductAdvantagesIcon {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100px;
+  height: 100px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.cardProductAdvantagesIcon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.first::after {
+  background-image: url("../../public/img/excellence/icon-1.svg");
+}
+
+.second::after {
+  background-image: url("../../public/img/excellence/icon-2.svg");
+}
+
+.third::after {
+  background-image: url("../../public/img/excellence/icon-3.svg");
+}
+
+.fourth::after {
+  background-image: url("../../public/img/excellence/icon-4.svg");
+}
+
+@media screen and (min-width: 0px) and (max-width: 1300px) {
+  .cardProductAdvantagesItemFirst .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemSecond .cardProductAdvantagesItemLine {
+    right: -60px;
+    width: 50px;
+  }
+
+  .cardProductAdvantagesItemThird .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemFourth .cardProductAdvantagesItemLine {
+    left: -60px;
+    width: 50px;
+  }
+
+  .cardProductAdvantagesImage {
+    max-width: 280px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1450px) {
+  .cardProduct::after {
+    height: 100px;
+  }
+
+  .cardProduct {
+    padding-bottom: 150px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1300px) {
+  .cardProductAdvantagesImageContainer::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1150px) {
+  .swiperSlideImg {
+    width: 300px;
+  }
+
+  .titleContainer {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1100px) {
+  .cardProductAdvantagesItemFirst .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemSecond .cardProductAdvantagesItemLine {
+    right: -50px;
+    width: 40px;
+  }
+
+  .cardProductAdvantagesItemThird .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemFourth .cardProductAdvantagesItemLine {
+    left: -50px;
+    width: 40px;
+  }
+
+  .cardProductAdvantagesImage {
+    max-width: 240px;
+  }
+
+  .cardProductAdvantagesImageContainer::after {
+    width: 250px;
+    height: 250px;
+  }
+
+  .advantages {
+    padding-bottom: 40px;
+  }
+
+  .cardProductAdvantagesList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cardProductAdvantagesItemFirst .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemSecond .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemThird .cardProductAdvantagesItemLine,
+  .cardProductAdvantagesItemFourth .cardProductAdvantagesItemLine {
+    display: none;
+  }
+
+  .cardProductAdvantagesItem {
+    max-width: 420px;
+    position: relative;
+    width: auto;
+    text-align: center;
+  }
+
+  .cardProductAdvantagesImageContainer {
+    margin-bottom: 40px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cardProduct .swiperContainer::after {
+    width: 100%;
+  }
+
+  .cardProduct .swipersSlideImg {
+    bottom: 50px;
+    max-height: 250px;
+  }
+
+  .cardProductSheetFourth {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 850px) {
+  .advantages {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .cardProduct {
+    height: auto;
+    max-height: unset;
+  }
+
+  .cardProductMainTitle {
+    margin: auto;
+    max-width: 700px;
+    font-size: 60px;
+    line-height: 50px;
+  }
+
+  .cardProduct .swiperContainer::after {
+    bottom: -100px;
+  }
+
+  .cardProduct .swiperSlideImg {
+    bottom: 50px;
+    max-height: 310px;
+  }
+
+  .cardProductMain {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cardProductSwiperWrapper {
+    margin-bottom: 50px;
+  }
+
+  .cardProductSwiperWrapper,
+  .cardProductDescription {
+    width: 100%;
+  }
+
+  .cardProductDescription {
+    max-width: 400px;
+  }
+
+  .cardProductSheetSix {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cardProductSheetThird {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .advantages {
+    padding-top: 100px;
+  }
+
+  .cardProductAdvantagesItemTitle {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 680px) {
+  .advantages {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+
+  .titleContainer {
+    margin: 0px;
+    max-width: 400px;
+    text-align: start;
+  }
+
+  .cardProductAdvantagesList {
+    align-items: start;
+  }
+
+  .cardProductAdvantagesImage {
+    top: -80px;
+  }
+
+  .titleContainer {
+    margin-bottom: 35px;
+  }
+
+  .title {
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    color: #3a3f5c;
+  }
+
+  .cardProductSheetSecond {
+    display: none;
+  }
+
+  .cardProductAdvantagesItem {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    margin-bottom: 30px;
+  }
+
+  .cardProductAdvantagesImageContainer::after {
+    top: 30%;
+    width: 250px;
+    height: 250px;
+  }
+
+  .cardProductAdvantagesItemText {
+    text-align: start;
+  }
+
+  .cardProductAdvantagesIcon {
+    margin: 0px;
+    margin-right: 20px;
+    min-width: 75px;
+    min-height: 75px;
+    width: 75px;
+    height: 75px;
+  }
+
+  .cardProductAdvantagesImageContainer {
+    position: absolute;
+    right: -150px;
+  }
+
+  .cardProductAdvantagesItemText {
+    color: #333;
+  }
+
+  .cardProductAdvantagesItem {
+    max-width: 260px;
+  }
+
+  .text {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #3a3f5c;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .cardProduct .swiperContainer::after {
+    bottom: -120px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 380px) {
+  .cardProductAdvantagesImageContainer {
+    position: absolute;
+    right: -180px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 340px) {
+  .cardProductAdvantagesImageContainer {
+    display: none;
+  }
+}

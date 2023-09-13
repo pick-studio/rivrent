@@ -1,0 +1,145 @@
+.questions {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #111;
+}
+
+.questionsList {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.questionsItem {
+  display: block;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(130, 130, 130);
+  cursor: pointer;
+}
+
+.titleContainer {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0px;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #fff;
+}
+
+.subTitle {
+  max-width: 250px;
+  text-align: end;
+  line-height: 26px;
+}
+
+.white {
+  color: #fff;
+}
+
+.questionsItem.active {
+  transition: 0.2s;
+}
+
+.questionsItem.active .questionsItemQuestion p {
+  color: #fff;
+  transition: 0.2s;
+}
+
+.qeustionsIcon {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  width: 26px;
+  height: 30px;
+  border: 1px solid #fff;
+  background-image: url("../../public/img/arrows/arrow-click.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  transition: 0.2s;
+}
+
+.questionsItem.active .qeustionsIcon {
+  transform: rotate(90deg);
+}
+
+.questionsItemQuestion p {
+  padding-right: 90px;
+  margin: 0px;
+  font-size: 22px;
+  font-weight: 500;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.questionsItemAnswer p {
+  width: 90%;
+  margin: 0;
+  margin-top: 0px;
+  opacity: 0;
+  font-size: 18px;
+  line-height: 26px;
+  height: 0px;
+  transition: opacity 0.1s, margin 0.5s;
+}
+
+.questionsItem.active .questionsItemAnswer p {
+  margin-top: 20px;
+  opacity: 1;
+  height: auto;
+  color: #fff;
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .subTitle {
+    margin: 0px;
+    text-align: start;
+  }
+
+  .questions {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .questionsItemQuestion p {
+    padding-right: 70px;
+    font-size: 18px;
+  }
+
+  .questionsItem {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .questions {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+}

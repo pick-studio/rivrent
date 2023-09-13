@@ -1,0 +1,735 @@
+.card {
+  padding-top: 150px;
+  padding-bottom: 0px;
+}
+
+.title {
+  margin: 0px;
+  padding: 0px;
+  font-size: 36px;
+}
+
+.titleContainer {
+  margin-bottom: 30px;
+}
+
+.miniTitle {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.priceContainer {
+  margin-bottom: 30px;
+}
+
+.descriptionContainer {
+  margin-bottom: 30px;
+}
+
+.equipmentContainer {
+  margin-bottom: 30px;
+}
+
+.equipmentList {
+  margin: 0px;
+  padding: 0px;
+}
+
+.equipmentItem {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.equipmentTechItem {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  list-style: none;
+  text-transform: lowercase;
+}
+
+.buttonContainer {
+  display: inline-block;
+}
+
+.buttonArrowContainer {
+  display: inline-block;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+}
+
+.left {
+  left: 25px;
+}
+
+.right {
+  right: 25px;
+}
+
+.swiperArrowsContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 50;
+}
+
+.equipmentItem::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  width: 20px;
+  height: 1px;
+  background: #111;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cardCard {
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  display: block;
+  width: calc(33% - 20px);
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.cardCard::after {
+  content: "Подробнее";
+  opacity: 0;
+  position: absolute;
+  padding-right: 30px;
+  font-size: 13px;
+  color: #333;
+  // background-image: url("../../img/card-card/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: right;
+  bottom: 20px;
+  right: 0;
+  transition: 0.3s;
+}
+
+.cardCard:hover {
+  opacity: 0.6;
+}
+
+.cardCard:hover.cardCard::after {
+  opacity: 1;
+  bottom: 0;
+}
+
+.cardWrapper {
+  margin-bottom: 65px;
+  display: flex;
+  flex-direction: row;
+}
+
+.cardDescriptionContainer {
+  max-width: 450px;
+}
+
+.cardCardImg {
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardCardTitle {
+  margin: 0;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.cardCardPrice {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.cardDescriptionBlock {
+  width: 50%;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+}
+
+.cardDescriptionTitle {
+  margin: 0;
+  margin-bottom: 0px;
+  color: #333;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 45px;
+}
+
+.cardPrice {
+  margin-bottom: 20px;
+}
+
+.cardPriceSale {
+  margin-bottom: 50px;
+}
+
+.cardPriceTextOld {
+  margin-left: 10px;
+  font-size: 22px;
+  color: rgb(185, 185, 185);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.cardPriceTitle,
+.cardPriceSaleTitle {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cardPriceText,
+.cardPriceSaleText {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 32px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.cardDescriptionInformation {
+  padding-top: 15px;
+  margin-bottom: 25px;
+}
+
+.cardDescriptionButton {
+  padding: 10px 20px;
+  color: #fff;
+  background: #333;
+  text-decoration: none;
+  font-weight: 100;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.cardDescriptionButton:hover {
+  background: #333;
+  border: 1px solid #333;
+}
+
+/* Swiper */
+
+.cardSwiper {
+  position: sticky;
+  top: 25px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 50px;
+  padding-bottom: 120px;
+  width: 50%;
+  height: 600px;
+  min-width: 525px;
+  border-radius: 25px;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+}
+
+.cardImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.card .gallery-thumbs .swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .gallery-thumbs .swiper-slide {
+  height: 33%;
+  max-height: 155px;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card .gallery-thumbs .swiper-slide:hover {
+  opacity: 0.8;
+}
+
+.card .swiperContainer {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: grab;
+}
+
+.cardOptions {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.cardOptionsTitleColor {
+  margin-bottom: 20px;
+}
+
+.cardOptionsTitle {
+  margin-right: 5px;
+}
+
+.cardOptionsText {
+  margin: 0;
+}
+
+.cardStructure {
+  margin-bottom: 30px;
+}
+
+.cardStructureTitle {
+  margin: 0;
+}
+
+.cardStructureText {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.cardCareTitle {
+  margin: 0;
+}
+
+.cardCare {
+  margin-bottom: 35px;
+}
+
+.cardCare p {
+  margin-bottom: 30px;
+}
+
+.cardCare h4 {
+  margin: 0px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #00a136;
+}
+
+.cardCareDescriptions {
+  margin-bottom: 40px;
+}
+
+.cardCareDescriptions p {
+  margin: 0px;
+}
+
+.cardCareList .cardCareDescriptions ul {
+  margin-top: 15px;
+}
+
+.cardCareList .cardCareDescriptions li {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 7.5px;
+}
+
+.cardCareList .cardCareDescriptions li::after {
+  content: "—";
+  position: absolute;
+  left: 7.5px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.cardCareList,
+.cardCareList ul,
+.cardCareList li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardCareList li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 0px;
+}
+
+// .cardCareList li::after {
+//   content: "-";
+//   position: absolute;
+//   left: 0px;
+// }
+
+.cardCareItem {
+  list-style: none;
+}
+
+.cardCareText {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.card .cardDescriptionText {
+  padding-bottom: 20px;
+
+  font-size: 14px;
+  line-height: 20px;
+  color: #555;
+  border-bottom: 1px solid #555;
+}
+
+.card .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.card .gallery-top {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.card .gallery-thumbs {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card .gallery-thumbs {
+  margin-right: 10px;
+  max-width: 20%;
+  overflow: visible;
+}
+
+.card .gallery-thumbs .swiper-slide {
+  height: 100%;
+  opacity: 0.4;
+}
+
+.card .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.card .swiper-button-prev,
+.card .swiper-button-next {
+  display: none;
+}
+
+@keyframes startAnimate {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.swiperSlide {
+  width: 400px;
+}
+
+.buttonWrapper {
+  margin-bottom: 30px;
+}
+
+.priceButton {
+  margin-right: 5px;
+  padding: 10px 10px;
+  color: #999;
+  background: none;
+  border: 1px solid #999;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+}
+
+.priceButton:hover {
+  border: 1px solid #111;
+  color: #111;
+}
+
+.priceButton.active {
+  border: 1px solid #111;
+  transform: scale(1.01);
+  background: #111;
+  color: #fff;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.cardProductText {
+  line-height: 22px;
+}
+
+.buttonVideoContainer {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 100;
+}
+
+.buttonVideo {
+  position: relative;
+  padding: 10px 10px;
+  padding-right: 30px;
+  background: #fff;
+  text-transform: lowercase;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.buttonVideo::after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 2.3px);
+  transform: translateY(-50%);
+  right: 12px;
+  width: 12px;
+  height: 15px;
+  background-image: url("../../public/img/icons/play.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.buttonVideo:hover {
+  opacity: 0.8;
+}
+
+.signature {
+  padding: 10px;
+  display: inline-block;
+  background: #333;
+  border-radius: 25px;
+  text-transform: lowercase;
+  font-size: 12px;
+  color: #fff;
+}
+
+.priceAnimate {
+  display: inline-block;
+}
+
+.price {
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1200px) {
+  .cardSwiper {
+    height: 350px;
+    min-width: 250px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  .catalog .cardCard {
+    width: calc(50% - 20px);
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 900px) {
+  .card {
+    padding-top: 100px;
+  }
+
+  .cardSwiper {
+    position: relative;
+    top: 0px;
+  }
+
+  .cardWrapper {
+    flex-direction: column;
+  }
+
+  .cardSwiper {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 470px;
+    border-radius: 25px;
+  }
+
+  .card .swiper-button-prev,
+  .card .swiper-button-next {
+    display: block;
+  }
+
+  .card .swiper-button-prev,
+  .card .swiper-button-next {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 20px;
+    height: auto;
+    width: auto;
+    background: #fff;
+    border-radius: 50%;
+    outline: none;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .card .swiper-button-prev {
+    top: calc(50% + 30px);
+    left: 0px;
+  }
+
+  .card .swiper-button-next {
+    top: calc(50% + 30px);
+    right: 0px;
+  }
+
+  .card .swiper-button-prev__arrow,
+  .card .swiper-button-next__arrow {
+    width: 11px;
+    height: 11px;
+    // background: url("../../img/slider/arrow-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .card .swiper-button-prev__arrow {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
+  }
+
+  .card .swiper-button-next:after,
+  .card .swiper-button-prev:after {
+    display: none;
+  }
+
+  .popular .swiper-button-prev__arrow,
+  .popular .swiper-button-next__arrow {
+    width: 10px;
+    height: 10px;
+  }
+
+  .popular .swiper-button-next {
+    right: -17.5px;
+  }
+
+  .popular .swiper-button-prev {
+    left: -17.5px;
+  }
+
+  .cardDescriptionBlock {
+    width: 100%;
+  }
+
+  .cardDescriptionButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card .gallery-thumbs {
+    display: none;
+  }
+
+  .catalog .cardCard {
+    margin: 0;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .cardCardTitle {
+    font-size: 16px;
+  }
+
+  .cardCardPrice {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .cardSwiper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+    width: 50%;
+    height: 130vw;
+    max-height: 300px;
+    min-width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+
+  .cardDescriptionTitle {
+    font-size: 22px;
+  }
+
+  .cardWrapper {
+    margin-bottom: 60px;
+  }
+
+  .cardCareDescriptions {
+    margin-bottom: 25px;
+  }
+
+  .cardPriceText,
+  .cardPriceSaleText {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 26px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .buttonVideoContainer {
+    right: 10px;
+    top: 10px;
+  }
+
+  .cardSwiper {
+    padding-bottom: 100px;
+  }
+
+  .priceButton {
+    margin-right: 6px;
+    padding: 8px 8px;
+  }
+
+  .left {
+    left: 10px;
+  }
+
+  .right {
+    right: 10px;
+  }
+}
+
+/* Swiper */

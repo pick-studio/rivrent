@@ -1,0 +1,441 @@
+.about {
+  padding-top: 150px;
+  padding-bottom: 50px;
+
+  overflow: hidden;
+}
+
+.aboutWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleContainer {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.title {
+  margin: 0px;
+  padding: 0px;
+  color: #3a3f5c;
+
+  font-size: 32px;
+}
+
+.subTitle {
+  display: none;
+}
+
+.text {
+  margin: 0px;
+  margin-bottom: 25px;
+  line-height: 24px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 34px;
+  color: #111;
+}
+
+.images {
+  position: relative;
+  top: 70px;
+  right: 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.image {
+  object-fit: contain;
+  object-position: center;
+}
+
+.information {
+  margin-right: 50px;
+  max-width: 500px;
+  min-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  z-index: 50;
+}
+
+.imagesContainer {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.imageFirst,
+.imageSecond,
+.imageThird {
+  overflow: hidden;
+
+  background: #333;
+  border-radius: 25px;
+}
+
+.imageFirst {
+  margin-bottom: 10px;
+  width: 300px;
+  height: 300px;
+  background: #f8f8f8;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  z-index: 50;
+}
+
+.imageSecond {
+  width: 400px;
+  height: 350px;
+  background: #f8f8f8;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+  z-index: 50;
+}
+
+.imageThird {
+  width: 600px;
+  height: 520px;
+  background: #f8f8f8;
+
+  animation-name: startAnimate;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  z-index: 50;
+}
+
+@keyframes startAnimate {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.buttonAnimate {
+  margin-top: 20px;
+}
+
+.button {
+  margin-right: 20px;
+  display: inline-block;
+  padding: 20px 35px;
+  color: #fff;
+  font-size: 14px;
+  background: #4dbc4b;
+  border-radius: 30px;
+  box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+// Свайпер
+
+.image {
+  object-fit: cover;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+.advantages {
+  margin-bottom: 20px;
+  bottom: 180px;
+  // position: absolute;
+
+  width: 100%;
+  display: flex;
+}
+
+.advantagesItem {
+  margin-right: 35px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.advatagesImage {
+  margin-bottom: 15px;
+}
+
+.advantagesText {
+  max-width: 140px;
+  margin: 0px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3a3f5c;
+}
+
+.aboutList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.aboutItem {
+  max-width: 300px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.aboutItemImg {
+  padding: 20px;
+  margin-top: 5px;
+  margin-right: 15px;
+  min-height: 30px;
+  min-width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111;
+  border: none;
+  border-radius: 50%;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.aboutItemImgFirst {
+  background-image: url("../../public/img/additions/icon-1.svg");
+}
+
+.aboutItemImgSecond {
+  background-image: url("../../public/img/additions/icon-2.svg");
+}
+
+.aboutItemImgThird {
+  background-image: url("../../public/img/additions/icon-3.svg");
+}
+
+.aboutItemImgFourth {
+  background-image: url("../../public/img/additions/icon-4.svg");
+}
+
+.aboutItemContentText {
+  line-height: 28px;
+  font-size: 18px;
+}
+// Свайпер
+
+@media screen and (min-width: 0px) and (max-width: 1700px) {
+  .imageFirst {
+    width: 250px;
+    height: 250px;
+  }
+
+  .imageSecond {
+    width: 350px;
+    height: 300px;
+  }
+
+  .imageThird {
+    width: 450px;
+    height: 370px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1400px) {
+  .about {
+    padding-top: 150px;
+    padding-bottom: 75px;
+
+    overflow: hidden;
+  }
+
+  .imageFirst {
+    display: none;
+  }
+
+  .imageSecond {
+    display: none;
+  }
+
+  .imageThird {
+    width: 550px;
+    height: 470px;
+  }
+
+  .images {
+    right: 0px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .about {
+    padding-top: 150px;
+    padding-bottom: 0px;
+
+    overflow: hidden;
+  }
+
+  .aboutWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .advantages {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .advantagesItem {
+    margin-right: 0px;
+  }
+
+  .information {
+    margin-right: 0px;
+    max-width: 100%;
+    min-width: 0px;
+  }
+
+  .images {
+    display: none;
+    position: relative;
+    flex-direction: column;
+    right: 0px;
+  }
+
+  .imageFirst,
+  .imageSecond,
+  .imageThird {
+    margin-bottom: 30px;
+    width: 82vw;
+    height: 350px;
+  }
+
+  .information {
+    margin-bottom: 0px;
+    min-width: auto;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 680px) {
+  .aboutWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleContainer {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .text {
+    box-sizing: border-box;
+  }
+
+  .advantages {
+    justify-content: space-between;
+  }
+
+  .subTitle {
+    display: block;
+    margin: 0px;
+    margin-top: 15px;
+    max-width: 550px;
+    color: #3a3f5c;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+  }
+
+  .images {
+    position: relative;
+    right: 0px;
+  }
+
+  .information {
+    margin-bottom: 35px;
+    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    padding: 15px 20px;
+  }
+
+  .button {
+    margin-right: 0px;
+  }
+
+  .buttonAnimate,
+  .videoButtonAnimate {
+    transform: scale(1) !important;
+  }
+
+  .about {
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .about {
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+
+  .titleContainer {
+    margin-bottom: 25px;
+  }
+
+  .imageFirst,
+  .imageSecond,
+  .imageThird {
+    min-width: 330px;
+    margin-bottom: 30px;
+    width: 90vw;
+    height: 330px;
+  }
+
+  .information {
+    margin-bottom: 0px;
+  }
+
+  .buttonAnimate,
+  .videoButtonAnimate {
+    display: none;
+  }
+
+  .images {
+    top: 20px;
+  }
+}
