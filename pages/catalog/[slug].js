@@ -175,13 +175,13 @@ export default function Product({ currentItem }) {
                             >
                                 {currentItem.fields.media.map((item, index) => {
                                     return (
-                                        <SwiperSlide className={styles.swiperSlide} key={index + item.fields.file.url}>
+                                        <SwiperSlide className={styles.swiperSlide} key={index}>
                                             <div className="card-card-img-container">
                                                 <Image
                                                     className={styles.cardImage}
                                                     src={"https:" + item.fields.file.url}
                                                     layout="fill"
-                                                    alt={item.fields.title}
+                                                    alt={item.fields.name}
                                                     priority
                                                 ></Image>
                                             </div>
@@ -254,13 +254,13 @@ export default function Product({ currentItem }) {
                             >
                                 {currentItem.fields.media.map((item, index) => {
                                     return (
-                                        <SwiperSlide className={styles.swiperThumbSlide} key={index + item.fields.file.url}>
+                                        <SwiperSlide className={styles.swiperThumbSlide} key={index}>
                                             <div className="card-card-img-container">
                                                 <Image
                                                     className={styles.cardImage}
                                                     src={"https:" + item.fields.file.url}
                                                     layout="fill"
-                                                    alt={item.fields.title}
+                                                    alt={item.fields.name}
                                                     priority
                                                 ></Image>
                                             </div>
@@ -293,10 +293,9 @@ export default function Product({ currentItem }) {
 
                                     {/* <p>Выберите тариф:</p> */}
                                     {priceButtons.map((item, index) => {
-                                        console.log(activeTab === index);
-
                                         return (
                                             <motion.div
+                                                key={index}
                                                 className={styles.buttonContainer}
                                                 whileHover={{ scale: 1.1 }}
                                                 whileTap={{ scale: 0.9 }}

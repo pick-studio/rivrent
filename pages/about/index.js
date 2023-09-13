@@ -9,15 +9,9 @@ import styles from './About.module.scss';
 
 import { motion } from "framer-motion";
 
-import iconFirst from '../../public/img/main/background.jpg';
-import iconSecond from '../../public/img/main/background.jpg';
-import iconThird from '../../public/img/main/background.jpg';
-
 import oneImage from '../../public/img/about/third.jpg';
 import twoImage from '../../public/img/about/second.jpg';
 import threeImage from '../../public/img/about/first.jpg';
-
-const breadCrumbsCatalog = { name: 'о нас', url: '/about' }
 
 export default function AboutSection({ button = false }) {
     return (
@@ -46,6 +40,7 @@ export default function AboutSection({ button = false }) {
                 <meta content="summary_large_image" name="twitter:card" />
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
             </Head>
+
             <div className={styles.about}>
                 <div className='container'>
                     <div className={styles.aboutWrapper}>
@@ -57,9 +52,7 @@ export default function AboutSection({ button = false }) {
                                 <p className="subTitle">Лучшие условия для наших клиентов</p>
                             </div>
 
-                            <p className={styles.text}>
-                                Компания "RIVRENT" – надежный партнер по аренде автомобилей в Калининграде. Огромный спектр услуг и дополнений к аренде наших автомобилей, чтобы сделать ваше путешествие или деловую поездку максимально комфортной.
-                            </p>
+                            <p className={styles.text}>Компания "RIVRENT" – надежный партнер по аренде автомобилей в Калининграде. Огромный спектр услуг и дополнений к аренде наших автомобилей, чтобы сделать ваше путешествие или деловую поездку максимально комфортной.</p>
 
                             <ul className={styles.aboutList}>
                                 <li className={styles.aboutItem}>
@@ -90,6 +83,7 @@ export default function AboutSection({ button = false }) {
                                     <Link href="/catalog" className={styles.button}>Подробнее</Link>
                                 </motion.div>
                             }
+
                         </div>
 
                         <div className={styles.images}>
