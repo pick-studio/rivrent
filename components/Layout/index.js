@@ -23,6 +23,11 @@ export default function Layout({ children }) {
         accurateTrackBounce:true,
         webvisor:true
    });`}
+
+                {`window.replainSettings = {id: '09205fe4-cc81-47ca-89c8-c62b9bfd38ef' };
+                (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+                var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+})('https://widget.replain.cc/dist/client.js');`}
             </Script>
 
             <main className='main'>

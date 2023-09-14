@@ -30,6 +30,9 @@ export async function getStaticProps() {
 const breadCrumbsCatalog = { name: 'каталог', url: '/catalog' }
 
 export default function Catalog({ cars }) {
+
+    console.log(cars);
+
     return (
         <>
             <Head>
