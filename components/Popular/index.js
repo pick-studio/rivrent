@@ -92,7 +92,7 @@ export default function Popular({ carList }) {
     }
 
     return (
-        <div className={styles.services}>
+        <div className={styles.popular}>
 
             <div className='container'>
 
@@ -103,8 +103,8 @@ export default function Popular({ carList }) {
 
                 <div className={styles.topBlock}>
 
-                    {/* <div className={styles.filter}>
 
+                    {/* <div className={styles.filter}>
                         {filterButtonsArray && filterButtonsArray.map((item, index) => {
                             return (
                                 <motion.div

@@ -27,11 +27,11 @@ export default function Main() {
                             </motion.div>
                         </div>
                         <div className={styles.massengerList}>
-                            <a className={`${styles.massengerItem} ${styles.telegram}`} href="https://t.me/+79116975415">
-                                <span>telegram</span>
-                            </a>
                             <a className={`${styles.massengerItem} ${styles.whatsapp}`} href="https://wa.me/79116975415">
                                 <span>whatsapp</span>
+                            </a>
+                            <a className={`${styles.massengerItem} ${styles.telegram}`} href="https://t.me/+79116975415">
+                                <span>telegram</span>
                             </a>
                             <a className={`${styles.massengerItem} ${styles.viber}`} href="https://msng.link/o/?79111111150=vi">
                                 <span>viber</span>

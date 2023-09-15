@@ -61,12 +61,12 @@ export default function Footer() {
     return (
         <Element name="contacts">
             <section>
-                <footer className={styles.footer}>
+                <footer className={styles.contacts}>
                     <div className="container">
-                        <div className={styles.footerWrapper}>
+                        <div className={styles.contactsWrapper}>
 
-                            <div className={styles.footerLeft}>
-                                <div className={styles.footerLeftWrapper}>
+                            <div className={styles.contactsLeft}>
+                                <div className={styles.contactsLeftWrapper}>
                                     <div className={styles.titleContainer}>
                                         <h2 className="title">
                                             Контакты
@@ -75,8 +75,8 @@ export default function Footer() {
                                             Оставьте заявку и мы свяжемся с вами в течении 15 минут
                                         </p>
                                     </div>
-                                    <div className={styles.footerContacts}>
-                                        <div className={styles.footerContactsPhone}>
+                                    <div className={styles.contactsContacts}>
+                                        <div className={styles.contactsContactsPhone}>
                                             <div className={styles.phoneContainer}>
                                                 <a href="tel:+79111111150" className={styles.phone}>+7 (911) 111-11-50</a>
                                                 <a href="mailto:car@rivrent.ru">car@rivrent.ru</a>
@@ -116,8 +116,8 @@ export default function Footer() {
                                 </div>
                             </div>
 
-                            <div className={styles.footerRight}>
-                                <div className={styles.footerRightWrapper}>
+                            <div className={styles.contactsRight}>
+                                <div className={styles.contactsRightWrapper}>
                                     <h2 className={`${styles.title} ${styles.mobileTitle}`}>Обратная связь</h2>
                                     <form ref={formTag} onSubmit={handleSubmit(onSubmitForm)} className={styles.form}>
                                         <input

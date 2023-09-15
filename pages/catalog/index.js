@@ -18,7 +18,8 @@ export async function getStaticProps() {
     });
 
     const data = await client.getEntries({
-        content_type: "car"
+        content_type: "car",
+        order: '-fields.filtration'
     });
 
     return {
@@ -30,8 +31,6 @@ export async function getStaticProps() {
 const breadCrumbsCatalog = { name: 'каталог', url: '/catalog' }
 
 export default function Catalog({ cars }) {
-
-    console.log(cars);
 
     return (
         <>

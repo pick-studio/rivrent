@@ -18,7 +18,9 @@ export async function getStaticProps() {
   });
 
   const data = await client.getEntries({
-    content_type: "car"
+    content_type: "car",
+    'fields.best': true, // Фильтрация по определенному полю, best работает
+    limit: 16 // Сколько максимум отдавать значений
   });
 
   return {

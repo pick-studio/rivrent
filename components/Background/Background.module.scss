@@ -1,6 +1,6 @@
 /* production */
 
-.production {
+.background {
   position: relative;
   display: flex;
   align-items: center;
@@ -15,17 +15,17 @@
   background-attachment: fixed;
 }
 
-.productionWrapper {
+.backgroundWrapper {
   margin: auto;
 }
 
-.productionTitleContainer h2 {
+.backgroundTitleContainer h2 {
   max-width: 750px;
   text-align: center;
   color: #fff;
 }
 
-.production::after {
+.background::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -36,7 +36,7 @@
   z-index: 0;
 }
 
-.production::before {
+.background::before {
   content: "";
   position: absolute;
   left: 0;
@@ -50,7 +50,7 @@
   z-index: 5;
 }
 
-.productionTitleContainer {
+.backgroundTitleContainer {
   position: relative;
   margin-bottom: 50px;
   display: -webkit-box;
@@ -66,7 +66,7 @@
   z-index: 5;
 }
 
-.productionTitle {
+.backgroundTitle {
   padding: 0;
   margin: 0;
   position: relative;
@@ -78,7 +78,7 @@
   color: #ffffff;
 }
 
-.productionButtonContainer {
+.backgroundButtonContainer {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,7 +93,7 @@
   z-index: 5;
 }
 
-.productionLink {
+.backgroundLink {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,7 +115,7 @@
   color: #ffffff;
 }
 
-.productionLink span {
+.backgroundLink span {
   position: absolute;
   display: block;
   width: 0;
@@ -131,7 +131,7 @@
   z-index: -1;
 }
 
-.productionLink::after {
+.backgroundLink::after {
   content: "";
   position: absolute;
   top: 0;
@@ -142,18 +142,18 @@
   z-index: -2;
 }
 
-.productionLink:hover span {
+.backgroundLink:hover span {
   width: 225%;
   height: 562.5px;
 }
 
-.productionLink:active {
+.backgroundLink:active {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
 }
 
-.productionButton {
+.backgroundButton {
   display: inline-block;
   padding: 17px 35px;
   color: #fff;
@@ -180,7 +180,7 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 950px) {
-  .productionTitle {
+  .backgroundTitle {
     padding: 0;
     margin: 0;
     position: relative;
@@ -192,20 +192,20 @@
     color: #ffffff;
   }
 
-  .productionTitleContainer {
+  .backgroundTitleContainer {
     margin-bottom: 30px;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 860px) {
-  .production {
+  .background {
     padding-top: 100px;
     padding-bottom: 150px;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 680px) {
-  .production {
+  .background {
     margin-top: 25px;
     // background: url("../../public/img/background/mobile.jpg");
     background-size: cover;
@@ -215,17 +215,17 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 720px) {
-  .production {
+  .background {
     // background: url("../../public/img/background/mobile.jpg");
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 550px) {
-  .production {
+  .background {
     background-size: 100%;
   }
 
-  .productionLink {
+  .backgroundLink {
     font-size: 16px;
   }
 

@@ -7,12 +7,12 @@ export default function Process() {
     const { openPopup } = usePopup();
 
     return (
-        <section className={styles.mainAdvantages}>
+        <section className={styles.process}>
             <div className="container">
                 <div className={styles.titleContainer}>
                     <h2 className="title">Арендуйте автомобиль за 3 простых шага</h2>
                 </div>
-                <ul className={styles.mainAdvantagesList}>
+                <ul className={styles.processList}>
                     <li className={styles.item}>
                         <div>
                             <span>#1</span>

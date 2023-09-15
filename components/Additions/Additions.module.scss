@@ -1,4 +1,4 @@
-.about {
+.additions {
   position: relative;
   padding-top: 100px;
   padding-bottom: 150px;
@@ -28,20 +28,20 @@
   margin-bottom: 75px;
 }
 
-.aboutTitle {
+.additionsTitle {
   margin-bottom: 35px;
   font-size: 28px;
   color: #333333;
 }
 
-.aboutText {
+.additionsText {
   font-size: 16px;
   max-width: 800px;
   margin-bottom: 50px;
   line-height: 20px;
 }
 
-.aboutList {
+.additionsList {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -49,7 +49,7 @@
   flex-wrap: wrap;
 }
 
-.aboutItem {
+.additionsItem {
   max-width: 300px;
   padding: 0;
   margin: 0;
@@ -60,7 +60,7 @@
   list-style: none;
 }
 
-.aboutItemImg {
+.additionsItemImg {
   padding: 20px;
   margin-top: 5px;
   margin-right: 15px;
@@ -76,34 +76,34 @@
   background-position: center;
 }
 
-.aboutItemImgFirst {
+.additionsItemImgFirst {
   background-image: url("../../public/img/additions/icon-1.svg");
 }
 
-.aboutItemImgSecond {
+.additionsItemImgSecond {
   background-image: url("../../public/img/additions/icon-2.svg");
 }
 
-.aboutItemImgThird {
+.additionsItemImgThird {
   background-image: url("../../public/img/additions/icon-3.svg");
 }
 
-.aboutItemImgFourth {
+.additionsItemImgFourth {
   background-image: url("../../public/img/additions/icon-4.svg");
 }
 
-.aboutItemContentContain {
+.additionsItemContentContain {
   display: flex;
   flex-direction: column;
 }
 
-.aboutItemContentTitle {
+.additionsItemContentTitle {
   margin: 0;
   margin-bottom: 7.5px;
   font-size: 18px;
 }
 
-.aboutItemContentText {
+.additionsItemContentText {
   margin: 0;
   color: #333333;
   font-size: 16px;
@@ -125,26 +125,26 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 1350px) {
-  .aboutItem {
+  .additionsItem {
     width: calc(50% - 20px);
     max-width: unset;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 760px) {
-  .aboutItem {
+  .additionsItem {
     width: 100%;
     max-width: unset;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 720px) {
-  .about {
+  .additions {
     padding-top: 50px;
     padding-bottom: 25px;
   }
 
-  .aboutItem {
+  .additionsItem {
     margin-bottom: 20px;
   }
 

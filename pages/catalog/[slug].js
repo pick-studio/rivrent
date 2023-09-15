@@ -72,9 +72,9 @@ export default function Product({ currentItem }) {
 
     const priceButtons = [
         { buttonName: '1 день', price: currentItem && currentItem.fields.priceOne },
-        { buttonName: '2 - 3 дня', price: currentItem && currentItem.fields.priceTwo },
-        { buttonName: '4 - 7 дней', price: currentItem && currentItem.fields.priceThree },
-        { buttonName: '7 - 29 дней', price: currentItem && currentItem.fields.priceFour },
+        { buttonName: '2 - 7 дня', price: currentItem && currentItem.fields.priceTwo },
+        { buttonName: '8 - 15 дней', price: currentItem && currentItem.fields.priceThree },
+        { buttonName: '16 дней', price: currentItem && currentItem.fields.priceFour },
     ]
 
     React.useEffect(() => {

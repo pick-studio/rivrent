@@ -32,11 +32,11 @@
   font-weight: 300;
 }
 
-.cardProductAdvantagesImageContainer {
+.advantagesImageContainer {
   position: relative;
 }
 
-.cardProductAdvantagesImage {
+.advantagesImage {
   position: relative;
   left: -5px;
   max-height: 700px;
@@ -51,7 +51,7 @@
   animation-iteration-count: infinite;
 }
 
-.cardProductAdvantagesImageContainer::after {
+.advantagesImageContainer::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -64,7 +64,7 @@
   z-index: -1;
 }
 
-.cardProductAdvantagesList {
+.advantagesList {
   max-width: 1300px;
   margin: auto;
 
@@ -86,7 +86,7 @@
   animation-fill-mode: both;
 }
 
-.cardProductAdvantagesItemContainer {
+.advantagesItemContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,11 +96,11 @@
   flex-direction: column;
 }
 
-.cardProductAdvantagesItemContainerLeft {
+.advantagesItemContainerLeft {
   text-align: right;
 }
 
-.cardProductAdvantagesItem {
+.advantagesItem {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +110,7 @@
   width: 260px;
 }
 
-.cardProductAdvantagesItemText {
+.advantagesItemText {
   margin: 0px;
   font-size: 16px;
   line-height: 24px;
@@ -119,15 +119,15 @@
   text-align: center;
 }
 
-.cardProductAdvantagesItemContainerLeft
-  .cardProductAdvantagesItem
-  .cardProductAdvantagesItemLine
-  .cardProductAdvantagesItemPoint {
+.advantagesItemContainerLeft
+  .advantagesItem
+  .advantagesItemLine
+  .advantagesItemPoint {
   right: 0;
   left: unset;
 }
 
-.cardProductAdvantages-image-container {
+.advantages-image-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,18 +136,18 @@
   align-items: center;
 }
 
-.cardProductAdvantagesItem-title {
+.advantagesItem-title {
   font-family: Corinthia;
   font-size: 48px;
   font-weight: 400;
   margin-bottom: 20px;
 }
 
-.cardProductAdvantagesItem-text {
+.advantagesItem-text {
   color: #888;
 }
 
-.cardProductAdvantagesIcon {
+.advantagesIcon {
   position: relative;
   margin-bottom: 30px;
   width: 100px;
@@ -156,7 +156,7 @@
   border-radius: 50%;
 }
 
-.cardProductAdvantagesIcon::after {
+.advantagesIcon::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -186,19 +186,19 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 1300px) {
-  .cardProductAdvantagesItemFirst .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemSecond .cardProductAdvantagesItemLine {
+  .advantagesItemFirst .advantagesItemLine,
+  .advantagesItemSecond .advantagesItemLine {
     right: -60px;
     width: 50px;
   }
 
-  .cardProductAdvantagesItemThird .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemFourth .cardProductAdvantagesItemLine {
+  .advantagesItemThird .advantagesItemLine,
+  .advantagesItemFourth .advantagesItemLine {
     left: -60px;
     width: 50px;
   }
 
-  .cardProductAdvantagesImage {
+  .advantagesImage {
     max-width: 280px;
   }
 }
@@ -214,7 +214,7 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 1300px) {
-  .cardProductAdvantagesImageContainer::after {
+  .advantagesImageContainer::after {
     width: 300px;
     height: 300px;
   }
@@ -231,23 +231,23 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 1100px) {
-  .cardProductAdvantagesItemFirst .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemSecond .cardProductAdvantagesItemLine {
+  .advantagesItemFirst .advantagesItemLine,
+  .advantagesItemSecond .advantagesItemLine {
     right: -50px;
     width: 40px;
   }
 
-  .cardProductAdvantagesItemThird .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemFourth .cardProductAdvantagesItemLine {
+  .advantagesItemThird .advantagesItemLine,
+  .advantagesItemFourth .advantagesItemLine {
     left: -50px;
     width: 40px;
   }
 
-  .cardProductAdvantagesImage {
+  .advantagesImage {
     max-width: 240px;
   }
 
-  .cardProductAdvantagesImageContainer::after {
+  .advantagesImageContainer::after {
     width: 250px;
     height: 250px;
   }
@@ -256,7 +256,7 @@
     padding-bottom: 40px;
   }
 
-  .cardProductAdvantagesList {
+  .advantagesList {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -266,21 +266,21 @@
     flex-direction: column;
   }
 
-  .cardProductAdvantagesItemFirst .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemSecond .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemThird .cardProductAdvantagesItemLine,
-  .cardProductAdvantagesItemFourth .cardProductAdvantagesItemLine {
+  .advantagesItemFirst .advantagesItemLine,
+  .advantagesItemSecond .advantagesItemLine,
+  .advantagesItemThird .advantagesItemLine,
+  .advantagesItemFourth .advantagesItemLine {
     display: none;
   }
 
-  .cardProductAdvantagesItem {
+  .advantagesItem {
     max-width: 420px;
     position: relative;
     width: auto;
     text-align: center;
   }
 
-  .cardProductAdvantagesImageContainer {
+  .advantagesImageContainer {
     margin-bottom: 40px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -368,7 +368,7 @@
     padding-top: 100px;
   }
 
-  .cardProductAdvantagesItemTitle {
+  .advantagesItemTitle {
     font-size: 20px;
   }
 }
@@ -385,11 +385,11 @@
     text-align: start;
   }
 
-  .cardProductAdvantagesList {
+  .advantagesList {
     align-items: flex-start;
   }
 
-  .cardProductAdvantagesImage {
+  .advantagesImage {
     top: -80px;
   }
 
@@ -408,7 +408,7 @@
     display: none;
   }
 
-  .cardProductAdvantagesItem {
+  .advantagesItem {
     padding: 0px;
     display: flex;
     flex-direction: row;
@@ -416,17 +416,17 @@
     margin-bottom: 30px;
   }
 
-  .cardProductAdvantagesImageContainer::after {
+  .advantagesImageContainer::after {
     top: 30%;
     width: 250px;
     height: 250px;
   }
 
-  .cardProductAdvantagesItemText {
+  .advantagesItemText {
     text-align: start;
   }
 
-  .cardProductAdvantagesIcon {
+  .advantagesIcon {
     margin: 0px;
     margin-right: 20px;
     min-width: 75px;
@@ -435,16 +435,16 @@
     height: 75px;
   }
 
-  .cardProductAdvantagesImageContainer {
+  .advantagesImageContainer {
     position: absolute;
     right: -150px;
   }
 
-  .cardProductAdvantagesItemText {
+  .advantagesItemText {
     color: #333;
   }
 
-  .cardProductAdvantagesItem {
+  .advantagesItem {
     max-width: 260px;
   }
 
@@ -464,14 +464,14 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 380px) {
-  .cardProductAdvantagesImageContainer {
+  .advantagesImageContainer {
     position: absolute;
     right: -180px;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 340px) {
-  .cardProductAdvantagesImageContainer {
+  .advantagesImageContainer {
     display: none;
   }
 }

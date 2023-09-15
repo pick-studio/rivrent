@@ -16,40 +16,40 @@ export default function Advantages() {
                 </div>
 
 
-                <div className={styles.cardProductAdvantagesList}>
-                    <div className={`${styles.cardProductAdvantagesItemContainer} ${styles.cardProductAdvantagesItemContainerLeft}`}>
-                        <div className={`${styles.cardProductAdvantagesItem} ${styles.cardProductAdvantagesItemFirst}`}>
-                            <div className={`${styles.cardProductAdvantagesIcon} ${styles.first}`} />
-                            <p className={styles.cardProductAdvantagesItemText}>
+                <div className={styles.advantagesList}>
+                    <div className={`${styles.advantagesItemContainer} ${styles.advantagesItemContainerLeft}`}>
+                        <div className={`${styles.advantagesItem} ${styles.advantagesItemFirst}`}>
+                            <div className={`${styles.advantagesIcon} ${styles.first}`} />
+                            <p className={styles.advantagesItemText}>
                                 Доставим автомобиль к месту назначения
                             </p>
                         </div>
-                        <div className={`${styles.cardProductAdvantagesItem} ${styles.cardProductAdvantagesItemSecond}`}>
-                            <div className={`${styles.cardProductAdvantagesIcon} ${styles.second}`} />
-                            <p className={styles.cardProductAdvantagesItemText}>
+                        <div className={`${styles.advantagesItem} ${styles.advantagesItemSecond}`}>
+                            <div className={`${styles.advantagesIcon} ${styles.second}`} />
+                            <p className={styles.advantagesItemText}>
                                 Нет ограничений по пробегу автомобиля
                             </p>
                         </div>
                     </div>
 
-                    <div className={styles.cardProductAdvantagesImageContainer}>
+                    <div className={styles.advantagesImageContainer}>
                         <Image
-                            className={styles.cardProductAdvantagesImage}
+                            className={styles.advantagesImage}
                             src={ImageAdvantages}
                             alt='Клубника - ягодная ферма'
                         ></Image>
                     </div>
 
-                    <div className={`${styles.cardProductAdvantagesItemContainer}`}>
-                        <div className={`${styles.cardProductAdvantagesItem} ${styles.cardProductAdvantagesItemThird}`}>
-                            <div className={`${styles.cardProductAdvantagesIcon} ${styles.third}`} />
-                            <p className={styles.cardProductAdvantagesItemText}>
+                    <div className={`${styles.advantagesItemContainer}`}>
+                        <div className={`${styles.advantagesItem} ${styles.advantagesItemThird}`}>
+                            <div className={`${styles.advantagesIcon} ${styles.third}`} />
+                            <p className={styles.advantagesItemText}>
                                 Все машины застрахованы ОСАГО или КАСКО
                             </p>
                         </div>
-                        <div className={`${styles.cardProductAdvantagesItem} ${styles.cardProductAdvantagesItemFourth}`}>
-                            <div className={`${styles.cardProductAdvantagesIcon} ${styles.fourth}`} />
-                            <p className={styles.cardProductAdvantagesItemText}>
+                        <div className={`${styles.advantagesItem} ${styles.advantagesItemFourth}`}>
+                            <div className={`${styles.advantagesIcon} ${styles.fourth}`} />
+                            <p className={styles.advantagesItemText}>
                                 Простой возврат автомобиля сразу
                             </p>
                         </div>

@@ -133,10 +133,10 @@ export default function Header() {
                                         </a>
                                     </li>
                                     <div className={styles.contactPopup}>
-                                        <li className={`${styles.contactItem} ${styles.contactItemMail}`}>
-                                            <a className={styles.contactLink} href="mailto:car@rivrent.ru">
+                                        <li className={`${styles.contactItem} ${styles.contactItemWhatsapp}`}>
+                                            <a className={styles.contactLink} href="https://wa.me/79111111150">
                                                 <span className={styles.contactText}>
-                                                    car@rivrent.ru
+                                                    whatsapp
                                                 </span>
                                             </a>
                                         </li>
@@ -147,17 +147,17 @@ export default function Header() {
                                                 </span>
                                             </a>
                                         </li>
-                                        <li className={`${styles.contactItem} ${styles.contactItemWhatsapp}`}>
-                                            <a className={styles.contactLink} href="https://wa.me/79111111150">
-                                                <span className={styles.contactText}>
-                                                    whatsapp
-                                                </span>
-                                            </a>
-                                        </li>
                                         <li className={`${styles.contactItem} ${styles.contactItemVK}`}>
                                             <a className={styles.contactLink} href="https://vk.com/rivrent">
                                                 <span className={styles.contactText}>
                                                     vkontakte
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li className={`${styles.contactItem} ${styles.contactItemMail}`}>
+                                            <a className={styles.contactLink} href="mailto:car@rivrent.ru">
+                                                <span className={styles.contactText}>
+                                                    car@rivrent.ru
                                                 </span>
                                             </a>
                                         </li>

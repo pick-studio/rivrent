@@ -552,7 +552,7 @@
 
 @media screen and (min-width: 0px) and (max-width: 900px) {
   .card {
-    padding-top: 100px;
+    padding-top: 120px;
   }
 
   .cardSwiper {
@@ -674,6 +674,10 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 720px) {
+  .card {
+    padding-top: 90px;
+  }
+
   .cardSwiper {
     display: flex;
     flex-direction: row-reverse;

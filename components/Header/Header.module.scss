@@ -1,10 +1,11 @@
 .header {
+  min-width: 360px;
   position: absolute;
   top: 0;
   left: 0;
   min-height: 60px;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
 
   animation-name: appearanceTop;
   animation-fill-mode: both;
