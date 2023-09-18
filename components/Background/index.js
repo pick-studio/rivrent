@@ -10,7 +10,7 @@ export default function Background() {
     return (
         <section className={styles.background}>
             <video autoPlay muted loop className={styles.video}>
-                <source src="https://rivrent.vercel.app/video/background.mp4" type="video/mp4" />
+                <source src="https://rivrent.ru/video/background.mp4" type="video/mp4" />
             </video>
 
             <div className={styles.backgroundWrapper}>
