@@ -1398,7 +1398,7 @@ export default async (req, res) => {
                                               align="left"
                                             >
                                               <a
-                                                href="https://wa.me/79520524700"
+                                                href="https://wa.me/79111111150"
                                                 style="
                                                   text-decoration: none;
                                                   color: #0089bf;
@@ -1444,7 +1444,7 @@ export default async (req, res) => {
                                               align="left"
                                             >
                                               <a
-                                                href="https://t.me/BubbleGum39"
+                                                href="https://t.me/+79111111150"
                                                 style="
                                                   text-decoration: none;
                                                   color: #0089bf;
