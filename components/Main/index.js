@@ -21,6 +21,16 @@ export default function Main() {
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                <Link className={`button ${styles.blackColor}`} href="/catalog">
+                                    Каталог машин
+                                </Link>
+                            </motion.div>
+
+                            <motion.div
+                                className={styles.buttonContainer}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
                                 <button className={`button`} onClick={() => openPopup()} href="/catalog">
                                     Быстрый подбор
                                 </button>
@@ -39,7 +49,7 @@ export default function Main() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     )
 };

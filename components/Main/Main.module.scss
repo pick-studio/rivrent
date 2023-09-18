@@ -162,6 +162,21 @@
   z-index: 5;
 }
 
+.blackColor {
+  margin-right: 25px;
+  padding-right: 25px;
+  background: #fff;
+  color: #111;
+}
+
+.blackColor::after {
+  display: none;
+}
+
+.blackColor:hover {
+  background: #e8e8e8;
+}
+
 @media screen and (min-width: 0px) and (max-width: 1400px) {
   .main {
     margin: auto;
@@ -195,6 +210,15 @@
   .mainTextContainer p {
     font-size: 20px;
   }
+
+  .mainTextContainer p {
+    margin-bottom: 30px;
+  }
+
+  .blackColor {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 800px) {
@@ -215,6 +239,14 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 550px) {
+  .blackColor {
+    display: none;
+  }
+
+  .mainTextContainer p {
+    margin-bottom: 40px;
+  }
+
   .main {
     position: relative;
     height: 650px;
