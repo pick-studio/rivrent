@@ -58,7 +58,7 @@ export default function AboutSection({ button = false }) {
                                 <li className={styles.aboutItem}>
                                     <div className={`${styles.aboutItemImg} ${styles.aboutItemImgFirst}`}></div>
                                     <div className={styles.aboutItemContentContain}>
-                                        <p className={styles.aboutItemContentText}>Большой выбор автомобилей</p>
+                                        <p className={styles.aboutItemContentText}>Автомобили в идеальном состоянии</p>
                                     </div>
                                 </li>
                                 <li className={styles.aboutItem}>
@@ -89,14 +89,14 @@ export default function AboutSection({ button = false }) {
                         <div className={styles.images}>
                             <div className={styles.imagesContainer}>
                                 <div className={styles.imageFirst}>
-                                    <Image className={styles.image} src={oneImage} alt='Ягодная ферма - купить клубнику и рассаду в Кадининграде' />
+                                    <Image className={styles.image} src={oneImage} alt='Аренда автомобилей в Калининграде' />
                                 </div>
                                 <div className={styles.imageSecond}>
-                                    <Image className={styles.image} src={twoImage} alt='Ягодная ферма - купить клубнику и рассаду в Кадининграде' />
+                                    <Image className={styles.image} src={twoImage} alt='Аренда автомобилей в Калининграде' />
                                 </div>
                             </div>
                             <div className={styles.imageThird}>
-                                <Image className={styles.image} src={threeImage} alt='Ягодная ферма - купить клубнику и рассаду в Кадининграде' />
+                                <Image className={styles.image} src={threeImage} alt='Аренда автомобилей в Калининграде' />
                             </div>
                         </div>
 

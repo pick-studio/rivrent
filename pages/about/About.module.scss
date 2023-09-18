@@ -217,25 +217,21 @@
   background-color: #111;
   border: none;
   border-radius: 50%;
-  background-size: 30px;
+  background-size: 60px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .aboutItemImgFirst {
-  background-image: url("../../public/img/additions/icon-1.svg");
+  background-image: url("../../public/img/about/new.svg");
 }
 
 .aboutItemImgSecond {
-  background-image: url("../../public/img/additions/icon-2.svg");
+  background-image: url("../../public/img/about/sale.svg");
 }
 
 .aboutItemImgThird {
-  background-image: url("../../public/img/additions/icon-3.svg");
-}
-
-.aboutItemImgFourth {
-  background-image: url("../../public/img/additions/icon-4.svg");
+  background-image: url("../../public/img/about/map.svg");
 }
 
 .aboutItemContentText {
