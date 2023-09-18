@@ -152,15 +152,18 @@ export default function Product({ currentItem }) {
 
                     <div className={styles.cardWrapper}>
                         <div className={`${styles.cardSwiper} ${styles.cardSwiperMain}`}>
-                            <div className={styles.buttonWrapper}>
-                                <motion.div
-                                    className={styles.buttonVideoContainer}
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                    <button className={styles.buttonVideo} onClick={() => openVideoPopup(currentItem && currentItem.fields.youtubeVideo)}>Видеообзор</button>
-                                </motion.div>
-                            </div>
+
+                            {currentItem && currentItem.fields.youtubeVideo &&
+                                <div className={styles.buttonWrapper}>
+                                    <motion.div
+                                        className={styles.buttonVideoContainer}
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                        <button className={styles.buttonVideo} onClick={() => openVideoPopup(currentItem && currentItem.fields.youtubeVideo)}>Видеообзор</button>
+                                    </motion.div>
+                                </div>
+                            }
 
                             <Swiper
                                 {...paramsSwiper}
