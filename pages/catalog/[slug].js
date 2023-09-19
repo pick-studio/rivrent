@@ -65,20 +65,24 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
+
+    console.log(currentItem);
+
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
 
     const [currentPrice, setCurrentPrice] = React.useState();
-    const [activeTab, setActiveTab] = React.useState(3);
+    const [activeTab, setActiveTab] = React.useState(4);
 
     const priceButtons = [
         { buttonName: '1 день', price: currentItem && currentItem.fields.priceOne },
-        { buttonName: '2 - 7 дня', price: currentItem && currentItem.fields.priceTwo },
-        { buttonName: '8 - 15 дней', price: currentItem && currentItem.fields.priceThree },
-        { buttonName: '16 дней', price: currentItem && currentItem.fields.priceFour },
+        { buttonName: '2-7 дн', price: currentItem && currentItem.fields.priceTwo },
+        { buttonName: '8-15 дн', price: currentItem && currentItem.fields.priceThree },
+        { buttonName: '16 дн', price: currentItem && currentItem.fields.priceFour },
+        { buttonName: '21 день', price: currentItem && currentItem.fields.priceFive }
     ]
 
     React.useEffect(() => {
-        setCurrentPrice(currentItem.fields.priceFour);
+        setCurrentPrice(currentItem.fields.priceFive);
     }, [currentItem]);
 
     function changePrice(price, activeIndex) {
@@ -292,19 +296,22 @@ export default function Product({ currentItem }) {
                                         exit={{ opacity: 0, position: "absolute", top: 0, left: 0 }}
                                     >{currentPrice}</motion.div> руб/сутки</div>
 
-                                    {/* <p>Выберите тариф:</p> */}
-                                    {priceButtons.map((item, index) => {
-                                        return (
-                                            <motion.div
-                                                key={index}
-                                                className={styles.buttonContainer}
-                                                whileHover={{ scale: 1.1 }}
-                                                whileTap={{ scale: 0.9 }}
-                                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                                <button className={activeTab === index ? `${styles.priceButton} ${styles.active}` : `${styles.priceButton}`} onClick={() => changePrice(item.price, index)} id={index}>{item.buttonName}</button>
-                                            </motion.div>
-                                        )
-                                    })}
+                                    <div className={styles.buttonPriceWrapper}>
+                                        {/* <p>Выберите тариф:</p> */}
+                                        {priceButtons.map((item, index) => {
+                                            return (
+                                                <motion.div
+                                                    key={index}
+                                                    className={styles.buttonContainer}
+                                                    whileHover={{ scale: 1.1 }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                                    <button className={activeTab === index ? `${styles.priceButton} ${styles.active}` : `${styles.priceButton}`} onClick={() => changePrice(item.price, index)} id={index}>{item.buttonName}</button>
+                                                </motion.div>
+                                            )
+                                        })}
+
+                                    </div>
                                 </div>
 
                                 <div className={styles.buttonWrapper}>
@@ -348,16 +355,19 @@ export default function Product({ currentItem }) {
                                             Коробка: {currentItem.fields.transmission ? 'Автомат' : 'Механика'}
                                         </li>
                                         <li className={styles.equipmentTechItem}>
-                                            Объем двигателя: {currentItem.fields.engineCapacity} л
-                                        </li>
-                                        <li className={styles.equipmentTechItem}>
-                                            Мощность двигателя: {currentItem.fields.powerEngine} лс
+                                            Двигатель: {currentItem.fields.engineCapacity} л / {currentItem.fields.powerEngine} лс
                                         </li>
                                         <li className={styles.equipmentTechItem}>
                                             Количество дверей: {currentItem.fields.doorNumber}
                                         </li>
                                         <li className={styles.equipmentTechItem}>
                                             Привод: {currentItem.fields.driveUnit}
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Топливо: {currentItem.fields.fuel}
+                                        </li>
+                                        <li className={styles.equipmentTechItem}>
+                                            Расход: {currentItem.fields.fuelConsumption}
                                         </li>
                                     </div>
                                 }

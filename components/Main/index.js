@@ -12,7 +12,7 @@ export default function Main() {
             <section className={styles.main}>
                 <div className={`${styles.mainContainer} container`}>
                     <div className={styles.mainWrapper}>
-                        <a className={styles.phoneMobileLink}>+7 (921) 111-11-50</a>
+                        <a href="tel:+79111111150" className={styles.phoneMobileLink}>+7 (911) 111-11-50</a>
                         <div className={styles.mainTextContainer}>
                             <h1>Аренда<br /> автомобилей<br /> в Калининграде</h1>
                             <p>Круглосуточная доставка по городу и области</p>
@@ -37,14 +37,17 @@ export default function Main() {
                             </motion.div>
                         </div>
                         <div className={styles.massengerList}>
-                            <a className={`${styles.massengerItem} ${styles.whatsapp}`} href="https://wa.me/79116975415">
+                            <a className={`${styles.massengerItem} ${styles.whatsapp}`} href="https://wa.me/79111111150">
                                 <span>whatsapp</span>
                             </a>
-                            <a className={`${styles.massengerItem} ${styles.telegram}`} href="https://t.me/+79116975415">
+                            <a className={`${styles.massengerItem} ${styles.telegram}`} href="https://t.me/rivrent">
                                 <span>telegram</span>
                             </a>
-                            <a className={`${styles.massengerItem} ${styles.viber}`} href="https://msng.link/o/?79111111150=vi">
+                            <a className={`${styles.massengerItem} ${styles.viber}`} href="https://viber.click/79111111150">
                                 <span>viber</span>
+                            </a>
+                            <a className={`${styles.massengerItem} ${styles.vk}`} href="https://vk.com/rivrent">
+                                <span>vkontakte</span>
                             </a>
                         </div>
                     </div>

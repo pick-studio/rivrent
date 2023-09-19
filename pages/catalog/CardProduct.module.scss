@@ -455,6 +455,8 @@
   background: none;
   border: 1px solid #999;
   font-weight: 400;
+  word-wrap: break-word;
+  white-space: nowrap;
   outline: none;
   cursor: pointer;
 }
@@ -530,6 +532,11 @@
 
 .priceAnimate {
   display: inline-block;
+}
+
+.buttonPriceWrapper {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .price {

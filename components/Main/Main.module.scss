@@ -112,6 +112,12 @@
   animation-delay: 0.8s;
 }
 
+.massengerItem.vk {
+  background-image: url("../../public/img/icons/vk.svg");
+  animation-duration: 0.6s;
+  animation-delay: 0.8s;
+}
+
 @keyframes startAnimate {
   from {
     transform: translateY(-10px);
@@ -156,6 +162,7 @@
   left: 0px;
   top: 90px;
   color: #fff;
+  text-decoration: none;
   border-radius: 15px;
   font-size: 24px;
   font-weight: 500;

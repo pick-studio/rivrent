@@ -105,6 +105,13 @@ export default function Footer() {
                                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
                                                 <a href="https://msng.link/o/?79111111150=vi" className={`${styles.massengerItem} ${styles.viber}`} />
                                             </motion.div>
+                                            <motion.div
+                                                className={styles.buttonOrderContainer}
+                                                whileHover={{ scale: 1.1 }}
+                                                whileTap={{ scale: 0.9 }}
+                                                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                                <a href="https://vk.com/rivrent" className={`${styles.massengerItem} ${styles.vk}`} />
+                                            </motion.div>
                                         </div>
 
                                         <div className={styles.adressContainer}>

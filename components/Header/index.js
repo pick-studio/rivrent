@@ -141,9 +141,16 @@ export default function Header() {
                                             </a>
                                         </li>
                                         <li className={`${styles.contactItem} ${styles.contactItemTelegram}`}>
-                                            <a className={styles.contactLink} href="https://t.me/+79111111150">
+                                            <a className={styles.contactLink} href="https://t.me/rivrent">
                                                 <span className={styles.contactText}>
                                                     telegram
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li className={`${styles.contactItem} ${styles.contactItemMail}`}>
+                                            <a className={styles.contactLink} href="https://viber.click/79111111150">
+                                                <span className={styles.contactText}>
+                                                    viber
                                                 </span>
                                             </a>
                                         </li>
@@ -151,13 +158,6 @@ export default function Header() {
                                             <a className={styles.contactLink} href="https://vk.com/rivrent">
                                                 <span className={styles.contactText}>
                                                     vkontakte
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li className={`${styles.contactItem} ${styles.contactItemMail}`}>
-                                            <a className={styles.contactLink} href="mailto:car@rivrent.ru">
-                                                <span className={styles.contactText}>
-                                                    car@rivrent.ru
                                                 </span>
                                             </a>
                                         </li>

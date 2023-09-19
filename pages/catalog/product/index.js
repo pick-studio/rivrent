@@ -37,7 +37,7 @@ export default function Product({ car, catalog }) {
                     <div className={styles.cardTitleWrapper}>
                         <div className={styles.cardTitleContainer}>
                             <h3 className={styles.cardTitle}>{car.fields.name}</h3>
-                            <p className={styles.cardText}>от {car.fields.priceFour} руб/сутки</p>
+                            <p className={styles.cardText}>от {car.fields.priceFive} руб/сутки</p>
                         </div>
 
                         <motion.div
