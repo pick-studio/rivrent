@@ -200,28 +200,28 @@
     height: 250px;
   }
 
-  .productCatalog .popularButton {
-    position: relative;
-    padding: 0px;
-    width: 55px;
-    height: 55px;
-    font-size: 0px;
-    border-radius: 20px;
-
-    cursor: pointer;
+  .productCatalog .cardTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
 
-  .productCatalog .popularButton::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background-image: url("../../../public/img/popular/key.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+  .productCatalog .buttonContainer {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .productCatalog .cardTitleContainer {
+    margin-bottom: 15px;
+  }
+
+  .productCatalog .popularButton {
+    padding: 18px;
+    width: 100%;
+  }
+
+  .productCatalog .cardText {
+    font-size: 16px;
   }
 
   .clickIcon {
@@ -286,6 +286,10 @@
     margin-bottom: 30px;
   }
 
+  .productCatalog .product {
+    margin-bottom: 15px;
+  }
+
   .product {
     position: relative;
     margin-bottom: 20px;
@@ -316,32 +320,7 @@
     display: none;
   }
 
-  .popularButton {
-    position: relative;
-    padding: 0px;
-    width: 55px;
-    height: 55px;
-    font-size: 0px;
-    border-radius: 15px;
-
-    cursor: pointer;
-  }
-
-  .popularButton::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background-image: url("../../../public/img/popular/key.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
   .productCatalog .buttonContainer {
-    margin-top: 15px;
     margin-left: 0px;
     width: 100%;
   }
@@ -355,8 +334,36 @@
   }
 }
 
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .cardTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .buttonContainer {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .cardTitleContainer {
+    margin-bottom: 20px;
+  }
+
+  .popularButton {
+    padding: 18px;
+    width: 100%;
+  }
+
+  .cardText {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 0px) and (max-width: 400px) {
-  .product {
-    height: 220px;
+  .cardTitleWrapper {
+    left: 25px;
+    bottom: 25px;
+    padding: 0px;
   }
 }

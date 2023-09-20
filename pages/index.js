@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
-
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Main from '../components/Main';
 import Popular from '../components/Popular';
@@ -30,6 +31,38 @@ export async function getStaticProps() {
 }
 
 export default function Home({ cars }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    // При монтировании компонента сохраняем текущую позицию прокрутки,
+    // но только если страница не была загружена из истории навигации (например, нажатием "назад")
+    if (!router.asPath.startsWith('/product/')) {
+      sessionStorage.setItem('scrollPosition', window.scrollY);
+    }
+
+    const handleScroll = () => {
+      if (!router.asPath.startsWith('/product/')) {
+        sessionStorage.setItem('scrollPosition', window.scrollY);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // При размонтировании компонента удаляем обработчик
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // При загрузке главной страницы восстанавливаем позицию прокрутки
+    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseInt(savedScrollPosition));
+      sessionStorage.removeItem('scrollPosition');
+    }
+  }, [router.pathname]);
 
   return (
     <>

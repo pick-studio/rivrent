@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import { createClient } from "contentful";
 import Head from "next/head";
 import BreadCrumbs from "../../components/BreadCrumbs";
@@ -65,13 +65,10 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-    console.log(currentItem);
-
-    const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
-
-    const [currentPrice, setCurrentPrice] = React.useState();
-    const [activeTab, setActiveTab] = React.useState(4);
+    const [currentPrice, setCurrentPrice] = useState();
+    const [activeTab, setActiveTab] = useState(4);
 
     const priceButtons = [
         { buttonName: '1 день', price: currentItem && currentItem.fields.priceOne },
@@ -81,7 +78,7 @@ export default function Product({ currentItem }) {
         { buttonName: '21 день', price: currentItem && currentItem.fields.priceFive }
     ]
 
-    React.useEffect(() => {
+    useEffect(() => {
         setCurrentPrice(currentItem.fields.priceFive);
     }, [currentItem]);
 
@@ -94,12 +91,12 @@ export default function Product({ currentItem }) {
 
     // Работа с формой обратной связи
 
-    const [originUrl, setOriginUrl] = React.useState("");
+    const [originUrl, setOriginUrl] = useState("");
 
-    const formTag = React.useRef();
-    const formButton = React.useRef();
+    const formTag = useRef();
+    const formButton = useRef();
 
-    React.useEffect(() => {
+    useEffect(() => {
         setOriginUrl(window.location.origin);
     }, []);
 

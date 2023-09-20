@@ -152,7 +152,7 @@ export default function Popular({ carList }) {
                                 slidesPerView: 1.2,
                                 spaceBetween: 20
                             },
-                            500: {
+                            600: {
                                 slidesPerView: 1.4,
                                 spaceBetween: 40
                             },
