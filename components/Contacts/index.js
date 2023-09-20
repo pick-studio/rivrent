@@ -79,7 +79,7 @@ export default function Footer() {
                                         <div className={styles.contactsContactsPhone}>
                                             <div className={styles.phoneContainer}>
                                                 <a href="tel:+79111111150" className={styles.phone}>+7 (911) 111-11-50</a>
-                                                <a href="mailto:car@rivrent.ru">car@rivrent.ru</a>
+                                                <a href="mailto:riv.autorent@gmail.com">riv.autorent@gmail.com</a>
                                             </div>
                                         </div>
 
@@ -89,7 +89,7 @@ export default function Footer() {
                                                 whileHover={{ scale: 1.1 }}
                                                 whileTap={{ scale: 0.9 }}
                                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                                <a href="https://t.me/+79111111150" className={`${styles.massengerItem} ${styles.telegram}`} />
+                                                <a href="https://t.me/rivrent" className={`${styles.massengerItem} ${styles.telegram}`} />
                                             </motion.div>
                                             <motion.div
                                                 className={styles.buttonOrderContainer}
@@ -103,7 +103,7 @@ export default function Footer() {
                                                 whileHover={{ scale: 1.1 }}
                                                 whileTap={{ scale: 0.9 }}
                                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                                <a href="https://msng.link/o/?79111111150=vi" className={`${styles.massengerItem} ${styles.viber}`} />
+                                                <a href="https://viber.click/79111111150" className={`${styles.massengerItem} ${styles.viber}`} />
                                             </motion.div>
                                             <motion.div
                                                 className={styles.buttonOrderContainer}
