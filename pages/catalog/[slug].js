@@ -8,13 +8,12 @@ import { usePopup } from '../../components/PopupContext';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation, Thumbs, Zoom } from 'swiper/modules';
+import { Navigation, Thumbs } from 'swiper/modules';
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import 'swiper/css/thumbs';
-import 'swiper/css/zoom';
 
 import styles from './CardProduct.module.scss';
 import Additions from "../../components/Additions";
@@ -69,13 +68,22 @@ export default function Product({ currentItem }) {
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
 
-    const swiperRef = useRef(null);
+    console.log(photoIndex);
 
-    const goToSlide = (index) => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slideTo(index);
-        }
+    const handleSlideChangeTransitionEnd = () => {
+        // Получаем индекс активного слайда
+        const swiper = document.querySelector('.swiperLightbox').swiper;
+        setPhotoIndex(swiper.realIndex);
     };
+
+    // const goToSlide = () => {
+    // Получаем индекс активного слайда
+    //     const swiper = document.querySelector('.swiperCard').swiper;
+    //     swiper.slideTo(photoIndex);
+    //     console.log(photoIndex);
+    // };
+
+    const swiperRef = useRef(null);
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -181,6 +189,7 @@ export default function Product({ currentItem }) {
                             <Swiper
                                 {...paramsSwiper}
                                 spaceBetween={0}
+                                initialSlide={photoIndex}
                                 slidesPerView={1}
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[Navigation, Thumbs]}
@@ -264,7 +273,6 @@ export default function Product({ currentItem }) {
                                         spaceBetween: 20
                                     }
                                 }}
-                                watchSlidesProgress={true}
                                 slidesPerView={8}
                                 modules={[Navigation, Thumbs]}
                                 className="swiperThumbs"
@@ -397,7 +405,7 @@ export default function Product({ currentItem }) {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                         >
-                            <button className={styles.closeButton} onClick={() => setIsOpen(false)} />
+                            <button className={styles.closeButton} onClick={() => { setIsOpen(false) }} />
                             <Swiper
                                 ref={swiperRef}
                                 {...paramsSwiper}
@@ -406,13 +414,13 @@ export default function Product({ currentItem }) {
                                 modules={[Navigation]}
                                 initialSlide={photoIndex}
                                 loop={true}
+                                onSlideChange={handleSlideChangeTransitionEnd}
                                 className="swiperLightbox"
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
                                         <SwiperSlide className={styles.swiperSlide}
                                             key={index}
-                                        // onClick={() => setIsOpen(false)}
                                         >
                                             <div className="card-card-img-container">
                                                 <Image className={styles.cardLightboxImage}
