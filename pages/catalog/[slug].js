@@ -68,7 +68,7 @@ export async function getStaticProps({ params }) {
 
 export default function Product({ currentItem }) {
     const [arrowImage, setArrowImage] = useState([]);
-    const [arrowImageArray, setArrowImageArray] = useState([]);
+    const [arrowImageArray, setArrowImageArray] = useState([]); ``
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
 
