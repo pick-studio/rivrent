@@ -2,20 +2,19 @@ import { useState, useEffect, useRef } from "react";
 import { createClient } from "contentful";
 import Head from "next/head";
 import BreadCrumbs from "../../components/BreadCrumbs";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
 import { usePopup } from '../../components/PopupContext';
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs, Zoom } from 'swiper/modules';
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import 'swiper/css/thumbs';
+import 'swiper/css/zoom';
 
 import styles from './CardProduct.module.scss';
 import Additions from "../../components/Additions";
@@ -67,10 +66,16 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
-    const [arrowImage, setArrowImage] = useState([]);
-    const [arrowImageArray, setArrowImageArray] = useState([]); ``
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
+
+    const swiperRef = useRef(null);
+
+    const goToSlide = (index) => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.slideTo(index);
+        }
+    };
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -87,12 +92,7 @@ export default function Product({ currentItem }) {
 
     useEffect(() => {
         setCurrentPrice(currentItem.fields.priceFive);
-        setArrowImage(currentItem.fields.media);
     }, [currentItem]);
-
-    useEffect(() => {
-        setArrowImageArray(arrowImage.map(item => item.fields.file.url));
-    }, [arrowImage]);
 
     function changePrice(price, activeIndex) {
         setCurrentPrice(price);
@@ -189,18 +189,18 @@ export default function Product({ currentItem }) {
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
-                                        <SwiperSlide className={styles.swiperSlide} key={index} onClick={() => {
-                                            setIsOpen(true);
-                                            setPhotoIndex(index);
-                                        }}>
+                                        <SwiperSlide className={styles.swiperSlide} key={index}
+                                            onClick={() => {
+                                                setIsOpen(true);
+                                                setPhotoIndex(index);
+                                            }
+                                            }>
                                             <div className="card-card-img-container">
-                                                <Image
-                                                    className={styles.cardImage}
+                                                <Image className={styles.cardImage}
                                                     src={"https:" + item.fields.file.url}
                                                     layout="fill"
                                                     alt={item.fields.name}
-                                                    priority
-                                                ></Image>
+                                                    priority />
                                             </div>
                                         </SwiperSlide>
                                     );
@@ -274,7 +274,7 @@ export default function Product({ currentItem }) {
                                         <SwiperSlide className={styles.swiperThumbSlide} key={index}>
                                             <div className="card-card-img-container">
                                                 <Image
-                                                    className={styles.cardImage}
+                                                    className={styles.cardImageThumbs}
                                                     src={"https:" + item.fields.file.url}
                                                     layout="fill"
                                                     alt={item.fields.name}
@@ -387,41 +387,70 @@ export default function Product({ currentItem }) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
 
-                {!!isOpen && (
-                    <Lightbox
-                        animationDuration={500}
-                        closeLabel="Закрыть"
-                        zoomInLabel="Увеличить изображение"
-                        zoomOutLabel="Отдалить изображение"
-                        // imageCaption={items.name}
-                        mainSrc={arrowImageArray[photoIndex]}
-                        nextSrc={
-                            arrowImageArray[
-                            (photoIndex + 1) % arrowImage.length
-                            ]
-                        }
-                        prevSrc={
-                            arrowImageArray[
-                            (photoIndex + arrowImageArray.length - 1) %
-                            arrowImageArray.length
-                            ]
-                        }
-                        onCloseRequest={() => setIsOpen(false)}
-                        onMovePrevRequest={() =>
-                            setPhotoIndex(
-                                (photoIndex + arrowImageArray.length - 1) %
-                                arrowImageArray.length
-                            )
-                        }
-                        onMoveNextRequest={() =>
-                            setPhotoIndex(
-                                (photoIndex + 1) % arrowImageArray.length
-                            )
-                        }
-                    />
-                )}
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            className={styles.lightbox}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <button className={styles.closeButton} onClick={() => setIsOpen(false)} />
+                            <Swiper
+                                ref={swiperRef}
+                                {...paramsSwiper}
+                                spaceBetween={0}
+                                slidesPerView={1}
+                                modules={[Navigation]}
+                                initialSlide={photoIndex}
+                                loop={true}
+                                className="swiperLightbox"
+                            >
+                                {currentItem && currentItem.fields.media.map((item, index) => {
+                                    return (
+                                        <SwiperSlide className={styles.swiperSlide}
+                                            key={index}
+                                        // onClick={() => setIsOpen(false)}
+                                        >
+                                            <div className="card-card-img-container">
+                                                <Image className={styles.cardLightboxImage}
+                                                    src={"https:" + item.fields.file.url}
+                                                    layout="fill"
+                                                    alt={item.fields.name}
+                                                    priority />
+                                            </div>
+                                        </SwiperSlide>
+                                    );
+                                })}
+
+                                {currentItem && currentItem.fields.media.length > 1 &&
+                                    <>
+                                        <motion.div
+                                            className={`${styles.buttonArrowContainer} ${styles.left}`}
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                            <div className="swiper-arrow-prev" />
+                                        </motion.div>
+
+                                        <motion.div
+                                            className={`${styles.buttonArrowContainer} ${styles.right}`}
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                            <div className="swiper-arrow-next" />
+                                        </motion.div>
+
+                                        <div className="swiper-pagination" />
+                                    </>
+                                }
+
+                            </Swiper>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 <Additions />
                 <Contacts />

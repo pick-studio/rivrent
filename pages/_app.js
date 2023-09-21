@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import '../styles/swiper.css'
 import '../styles/swiper-thumbs.css';
 import '../styles/swiper-card.css';
+import '../styles/swiper-lightbox.css';
 import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
 import { useRouter } from "next/router";
