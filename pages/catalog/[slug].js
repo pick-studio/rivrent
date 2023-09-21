@@ -67,8 +67,8 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
-    let arrowImage = currentItem.fields.media;
-    let arrowImageArray = arrowImage.map(item => item.fields.file.url);
+    const [arrowImage, setArrowImage] = useState([]);
+    const [arrowImageArray, setArrowImageArray] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -82,12 +82,17 @@ export default function Product({ currentItem }) {
         { buttonName: '2-7 дн', price: currentItem && currentItem.fields.priceTwo },
         { buttonName: '8-15 дн', price: currentItem && currentItem.fields.priceThree },
         { buttonName: '16 дн', price: currentItem && currentItem.fields.priceFour },
-        { buttonName: '21 день', price: currentItem && currentItem.fields.priceFive }
+        { buttonName: 'от 21 дн', price: currentItem && currentItem.fields.priceFive }
     ]
 
     useEffect(() => {
         setCurrentPrice(currentItem.fields.priceFive);
+        setArrowImage(currentItem.fields.media);
     }, [currentItem]);
+
+    useEffect(() => {
+        setArrowImageArray(arrowImage.map(item => item.fields.file.url));
+    }, [arrowImage]);
 
     function changePrice(price, activeIndex) {
         setCurrentPrice(price);
