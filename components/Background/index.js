@@ -9,7 +9,7 @@ export default function Background() {
 
     return (
         <section className={styles.background}>
-            <video autoPlay muted loop className={styles.video}>
+            <video autoPlay muted loop controls={false} className={styles.video}>
                 <source src="https://rivrent.ru/video/background.mp4" type="video/mp4" />
             </video>
 
