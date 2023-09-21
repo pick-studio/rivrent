@@ -39,13 +39,13 @@ export default function Additions() {
                                     </div>
                                 </li>
                                 <li className={styles.additionsItem}>
-                                    <div className={`${styles.additionsItemImg} ${styles.additionsItemImgThird}`}></div>
+                                    <div className={`${styles.additionsItemImg} ${styles.additionsItemImgFourth}`}></div>
                                     <div className={styles.additionsItemContentContain}>
                                         <p className={styles.additionsItemContentText}>Обработка машины перед поездкой</p>
                                     </div>
                                 </li>
                                 <li className={styles.additionsItem}>
-                                    <div className={`${styles.additionsItemImg} ${styles.additionsItemImgFourth}`}></div>
+                                    <div className={`${styles.additionsItemImg} ${styles.additionsItemImgThird}`}></div>
                                     <div className={styles.additionsItemContentContain}>
                                         <p className={styles.additionsItemContentText}>Щедрые скидки от наших партнеров</p>
                                     </div>

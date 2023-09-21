@@ -34,7 +34,6 @@ export default function Process() {
                             <span>#3</span>
                             <h5>Получите машину</h5>
                             <p>Заберите авто у нас или мы доставим его вам</p>
-                            <button className={styles.button} onClick={() => openPopup()}>Подробнее</button>
                         </div>
                     </li>
                 </ul>

@@ -5,6 +5,8 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePopup } from '../../components/PopupContext';
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -65,6 +67,11 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
+    let arrowImage = currentItem.fields.media;
+    let arrowImageArray = arrowImage.map(item => item.fields.file.url);
+    const [isOpen, setIsOpen] = useState(false);
+    const [photoIndex, setPhotoIndex] = useState(0);
+
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const [currentPrice, setCurrentPrice] = useState();
@@ -177,7 +184,10 @@ export default function Product({ currentItem }) {
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
-                                        <SwiperSlide className={styles.swiperSlide} key={index}>
+                                        <SwiperSlide className={styles.swiperSlide} key={index} onClick={() => {
+                                            setIsOpen(true);
+                                            setPhotoIndex(index);
+                                        }}>
                                             <div className="card-card-img-container">
                                                 <Image
                                                     className={styles.cardImage}
@@ -373,6 +383,40 @@ export default function Product({ currentItem }) {
                         </div>
                     </div>
                 </div>
+
+                {!!isOpen && (
+                    <Lightbox
+                        animationDuration={500}
+                        closeLabel="Закрыть"
+                        zoomInLabel="Увеличить изображение"
+                        zoomOutLabel="Отдалить изображение"
+                        // imageCaption={items.name}
+                        mainSrc={arrowImageArray[photoIndex]}
+                        nextSrc={
+                            arrowImageArray[
+                            (photoIndex + 1) % arrowImage.length
+                            ]
+                        }
+                        prevSrc={
+                            arrowImageArray[
+                            (photoIndex + arrowImageArray.length - 1) %
+                            arrowImageArray.length
+                            ]
+                        }
+                        onCloseRequest={() => setIsOpen(false)}
+                        onMovePrevRequest={() =>
+                            setPhotoIndex(
+                                (photoIndex + arrowImageArray.length - 1) %
+                                arrowImageArray.length
+                            )
+                        }
+                        onMoveNextRequest={() =>
+                            setPhotoIndex(
+                                (photoIndex + 1) % arrowImageArray.length
+                            )
+                        }
+                    />
+                )}
 
                 <Additions />
                 <Contacts />
