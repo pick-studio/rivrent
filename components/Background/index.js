@@ -3,8 +3,6 @@ import styles from './Background.module.scss';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-// import backgroundVideo from '../../public/video/background.mp4';
-
 export default function Background() {
 
     return (

@@ -7,7 +7,7 @@ import axios from "axios";
 
 import styles from "./Contacts.module.scss";
 
-export default function Footer() {
+export default function Footer({ product }) {
     const [originUrl, setOriginUrl] = React.useState("");
 
     const formTag = React.useRef();
@@ -72,7 +72,7 @@ export default function Footer() {
                                             Контакты
                                         </h2>
                                         <p className="subTitle">
-                                            Оставьте заявку и мы свяжемся с вами в течении 15 минут
+                                            {!product ? `Оставьте заявку и мы свяжемся с вами в течении 5 минут` : `C радостью ответим на ваши вопросы и поможем вам в выборе автомобиля. Оформим за 10 минут и встретим с готовым договором`}
                                         </p>
                                     </div>
                                     <div className={styles.contactsContacts}>

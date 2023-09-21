@@ -461,7 +461,7 @@ export default function Product({ currentItem }) {
                 </AnimatePresence>
 
                 <Additions />
-                <Contacts />
+                <Contacts product={true} />
 
             </section >
         </div >
