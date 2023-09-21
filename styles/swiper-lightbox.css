@@ -11,4 +11,6 @@
     margin-left: 0px !important;
     margin-right: 0px !important;
     outline: none;
+
+    touch-action: manipulation;
 }
