@@ -15,7 +15,7 @@ export default function Header() {
     const [isShow, setIsShow] = useState(false);
 
     React.useEffect(() => {
-        if (location.asPath === "/") {
+        if (location.asPath === "/" || location.asPath.startsWith("/?")) {
             setColorMenu(false);
         } else {
             setColorMenu(true);
