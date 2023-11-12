@@ -36,7 +36,7 @@ export default function Advantages() {
                         <Image
                             className={styles.advantagesImage}
                             src={ImageAdvantages}
-                            alt='Клубника - ягодная ферма'
+                            alt='РИВРЕНТ - Аренда автомобилей в Калининграде и области'
                         ></Image>
                     </div>
 
