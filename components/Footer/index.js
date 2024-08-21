@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="container">
                 <div className={styles.footerWrapper}>
                     <div className={styles.information}>
-                        <span>RIVRENT © 2023</span>
+                        <span>RIV RENT © 2023</span>
                         <p>Аренда автомобилей в Калининграде и области</p>
                     </div>
 

@@ -68,20 +68,11 @@ export default function Product({ currentItem }) {
     const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
 
-    console.log(photoIndex);
-
     const handleSlideChangeTransitionEnd = () => {
         // Получаем индекс активного слайда
         const swiper = document.querySelector('.swiperLightbox').swiper;
         setPhotoIndex(swiper.realIndex);
     };
-
-    // const goToSlide = () => {
-    // Получаем индекс активного слайда
-    //     const swiper = document.querySelector('.swiperCard').swiper;
-    //     swiper.slideTo(photoIndex);
-    //     console.log(photoIndex);
-    // };
 
     const swiperRef = useRef(null);
 
@@ -194,7 +185,7 @@ export default function Product({ currentItem }) {
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[Navigation, Thumbs]}
                                 loop={true}
-                                className="swiperCard"
+                                className={styles.swiper}
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
