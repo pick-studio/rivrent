@@ -3,6 +3,9 @@ import React from 'react';
 import { usePopup } from '../PopupContext';
 import styles from "./Main.module.scss";
 import { motion } from 'framer-motion';
+import MainRating from '../blocks/Reviews/mainRating';
+
+import { data } from '../../components/blocks/Reviews/data';
 
 export default function Main() {
     const { openPopup } = usePopup();
@@ -51,6 +54,8 @@ export default function Main() {
                             </a>
                         </div>
                     </div>
+
+                    <MainRating company={data.company} grade={data.grade} numberOfReviews={data.numberOfReviews} />
                 </div>
             </section >
         </>

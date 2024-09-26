@@ -18,7 +18,7 @@ export default async (req, res) => {
 
   try {
     const emailRes = await transporter.sendMail({
-      from: '"RIVRENT - Сообщение с сайта" <car@rivrent.ru>',
+      from: '"RIV RENT - Сообщение с сайта" <car@rivrent.ru>',
       to: 'car@rivrent.ru',
       to: 'riv.autorent@gmail.com',
       subject: `Сообщение от пользователя ${name ? name : ''}`,
@@ -1524,7 +1524,7 @@ export default async (req, res) => {
     })
 
     const emailUserRes = await transporter.sendMail({
-      from: '"RIVRENT" <car@rivrent.ru>',
+      from: '"RIV RENT" <car@rivrent.ru>',
       to: `${email}`,
       subject: `Мы получили ваше сообщение и cкоро дадим вам ответ!`,
       html:

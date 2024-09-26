@@ -10,7 +10,8 @@ import Process from '../components/Process';
 import Background from '../components/Background';
 import Questions from '../components/Questions';
 import Contacts from '../components/Contacts';
-import Advantages from '@/components/Advantages';
+import Advantages from '../components/Advantages';
+import Reviews from "../components/blocks/Reviews";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -99,6 +100,7 @@ export default function Home({ cars }) {
         <ScrollLine />
         <Popular carList={cars} />
         <Additions />
+        <Reviews />
         <Process />
         <Background />
         <Advantages />

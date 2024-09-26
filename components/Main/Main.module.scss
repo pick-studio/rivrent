@@ -54,6 +54,7 @@
 }
 
 .mainContainer {
+  position: relative;
   height: 100%;
 }
 
@@ -266,7 +267,7 @@
 
   .mainTextContainer h1 {
     margin: 0px;
-    font-size: 30px;
+    font-size: 26px;
     text-transform: uppercase;
     color: #fff;
   }
@@ -280,6 +281,10 @@
     font-size: 23px;
   }
 
+  .mainTextContainer p {
+    font-size: 18px;
+  }
+
   .mainTextContainer {
     position: relative;
     top: 30px;
@@ -289,17 +294,16 @@
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
   .massengerList {
-    bottom: 10px;
-    top: unset;
-    left: 0px;
-    display: flex;
-    flex-direction: row;
+    top: 50%;
+    right: 10px;
     z-index: 5;
   }
 
   .massengerItem {
-    margin: 0px;
-    margin-right: 20px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    width: 30px;
+    height: 30px;
   }
 }
 

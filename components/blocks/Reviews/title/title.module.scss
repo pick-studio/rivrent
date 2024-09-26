@@ -1,0 +1,37 @@
+.titleContainer {
+  margin-bottom: 25px;
+}
+
+.title {
+  display: inline-block;
+  position: relative;
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 0px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+
+  background-image: url("../../../../public/img/reviews/check-blue.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  border-radius: 50%;
+}
+
+.subTitle {
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+  color: #a0a0a0;
+  line-height: 24px;
+}

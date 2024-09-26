@@ -1,0 +1,112 @@
+.rating {
+  padding: 15px;
+
+  position: absolute;
+  bottom: 25px;
+  right: 100px;
+
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+
+  background: #fff;
+  border-radius: 20px;
+
+  text-decoration: none;
+
+  z-index: 50;
+  transition: 0.2s;
+}
+
+.rating:hover {
+  opacity: 0.8;
+}
+
+.company {
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 0px;
+  width: 35px;
+  height: 35px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.company.yandex {
+  background-image: url("../../../../public/img/reviews/yandex.webp");
+}
+
+.company.google {
+  background-image: url("../../../../public/img/reviews/google.webp");
+}
+
+.company.gis {
+  background-image: url("../../../../public/img/reviews/gis.webp");
+}
+
+.grade {
+  margin-right: 10px;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 500;
+
+  color: #111;
+  transition: 0.2s;
+}
+
+.indicators {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.stars.mini .star {
+  width: 15px;
+  height: 15px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  margin-right: 2.5px;
+}
+
+.numbers {
+  font-size: 12px;
+  line-height: 16px;
+  color: #a0a0a0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+  .rating {
+    width: fit-content;
+    padding: 10px;
+
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .company {
+    margin-right: 12px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .star {
+    width: 13px;
+    height: 13px;
+    margin-right: 2.5px;
+  }
+
+  .grade {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}

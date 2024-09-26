@@ -141,9 +141,9 @@ export default function Product({ currentItem }) {
                     name="keywords"
                     content="Аренда автомобилей, Прокат машин, Автопрокат, Калининград, Калининградская область, Авто в аренду, Прокат авто, Дешевая аренда, Аэропорт Калининграда, Долгосрочная аренда, Лучший прокат, Семейная аренда, Автомобили для туристов, Минивэны, Экономичная аренда, Автомобиль на свадьбу, Аренда с водителем, Транспорт в Калининграде, Рент кар, Прокат транспорта."
                 />
-                <meta content="RIVRENT - аренда автомобилей в Калининграде и области" property="twitter:title" />
+                <meta content="RIV RENT - аренда автомобилей в Калининграде и области" property="twitter:title" />
                 <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="RIVRENT" />
+                <meta property="og:site_name" content="RIV RENT" />
                 <meta property="og:title" content="Аренда автомобилей в Калининграде и области" />
                 <meta property="og:image" content={`https: ${currentItem && currentItem.fields.media[0].fields.file.url}`} />
                 <meta property="og:image:type" content="image/jpg" />

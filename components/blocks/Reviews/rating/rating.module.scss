@@ -1,0 +1,64 @@
+.rating {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.company {
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 0px;
+  width: 35px;
+  height: 35px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.company.yandex {
+  background-image: url("../../../../public/img/reviews/yandex.webp");
+}
+
+.company.google {
+  background-image: url("../../../../public/img/reviews/google.webp");
+}
+
+.company.gis {
+  background-image: url("../../../../public/img/reviews/gis.webp");
+}
+
+.grade {
+  margin-right: 10px;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.indicators {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.stars.mini .star {
+  width: 15px;
+  height: 15px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  margin-right: 2.5px;
+}
+
+.numbers {
+  font-size: 12px;
+  line-height: 16px;
+  color: #a0a0a0;
+}
