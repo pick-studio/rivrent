@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePopup } from '../../../components/PopupContext';
 import { motion } from 'framer-motion';
 import styles from './Product.module.scss';
+import MainRating from '@/components/blocks/Reviews/mainRating';
 // import { usePopup } from '../../../components/ContactPopup/PopupContext';
 
 export default function Product({ car, catalog }) {
@@ -33,6 +34,8 @@ export default function Product({ car, catalog }) {
                             }
                         </div>
                     </Link>
+
+                    <MainRating />
 
                     <div className={styles.cardTitleWrapper}>
                         <div className={styles.cardTitleContainer}>

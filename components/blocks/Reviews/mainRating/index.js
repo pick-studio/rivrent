@@ -22,7 +22,7 @@ export default function MainRating({ companies }) {
 
             {companies && companies.map((item, index) => {
                 return (
-                    <Company company={item.company} />
+                    <Company key={index} company={item.company} />
                 )
             })}
             {/* Вытащить те которые уже есть */}
