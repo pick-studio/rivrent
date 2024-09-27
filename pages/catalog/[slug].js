@@ -5,8 +5,8 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
 import { usePopup } from '../../components/PopupContext';
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';  // Импорт стилей библиотеки
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -68,9 +68,8 @@ export async function getStaticProps({ params }) {
 
 export default function Product({ currentItem }) {
     const [photoIndex, setPhotoIndex] = useState(0);
-
+    const [isOpen, setIsOpen] = useState(false);  // Для управления состоянием лайтбокса
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
     const [currentPrice, setCurrentPrice] = useState();
     const [activeTab, setActiveTab] = useState(4);
 
@@ -153,8 +152,6 @@ export default function Product({ currentItem }) {
 
                     <BreadCrumbs array={breadCrumbsCatalog} />
 
-                    {/* {currentProduct && */}
-
                     <div className={styles.cardWrapper}>
                         <div className={`${styles.cardSwiper} ${styles.cardSwiperMain}`}>
 
@@ -183,13 +180,17 @@ export default function Product({ currentItem }) {
                                     return (
                                         <SwiperSlide className={styles.swiperSlide} key={index}>
                                             <div className="card-card-img-container">
-                                                <Zoom>
-                                                    <Image className={styles.cardImage}
-                                                        src={"https:" + item.fields.file.url}
-                                                        layout="fill"
-                                                        alt={item.fields.name}
-                                                        priority />
-                                                </Zoom>
+                                                <Image
+                                                    className={styles.cardImage}
+                                                    src={"https:" + item.fields.file.url}
+                                                    layout="fill"
+                                                    alt={item.fields.name}
+                                                    priority
+                                                    onClick={() => {
+                                                        setPhotoIndex(index);  // Установить индекс текущего изображения
+                                                        setIsOpen(true);       // Открыть lightbox
+                                                    }}
+                                                />
                                             </div>
                                         </SwiperSlide>
                                     );
@@ -226,10 +227,6 @@ export default function Product({ currentItem }) {
                                 breakpoints={{
                                     0: {
                                         slidesPerView: 4,
-                                        spaceBetween: 20
-                                    },
-                                    500: {
-                                        slidesPerView: 5,
                                         spaceBetween: 20
                                     },
                                     500: {
@@ -373,6 +370,21 @@ export default function Product({ currentItem }) {
                                 }
 
                             </div>
+
+                            {isOpen && (
+                                <Lightbox
+                                    mainSrc={"https:" + currentItem.fields.media[photoIndex].fields.file.url}
+                                    nextSrc={"https:" + currentItem.fields.media[(photoIndex + 1) % currentItem.fields.media.length].fields.file.url}
+                                    prevSrc={"https:" + currentItem.fields.media[(photoIndex + currentItem.fields.media.length - 1) % currentItem.fields.media.length].fields.file.url}
+                                    onCloseRequest={() => setIsOpen(false)}  // Закрытие Lightbox
+                                    onMovePrevRequest={() =>
+                                        setPhotoIndex((photoIndex + currentItem.fields.media.length - 1) % currentItem.fields.media.length)
+                                    }
+                                    onMoveNextRequest={() =>
+                                        setPhotoIndex((photoIndex + 1) % currentItem.fields.media.length)
+                                    }
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
