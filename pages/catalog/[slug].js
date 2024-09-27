@@ -5,8 +5,6 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
 import { usePopup } from '../../components/PopupContext';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';  // Импорт стилей библиотеки
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -67,9 +65,19 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
+    const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
-    const [isOpen, setIsOpen] = useState(false);  // Для управления состоянием лайтбокса
+
+    const handleSlideChangeTransitionEnd = () => {
+        // Получаем индекс активного слайда
+        const swiper = document.querySelector('.swiperLightbox').swiper;
+        setPhotoIndex(swiper.realIndex);
+    };
+
+    const swiperRef = useRef(null);
+
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
     const [currentPrice, setCurrentPrice] = useState();
     const [activeTab, setActiveTab] = useState(4);
 
@@ -152,6 +160,8 @@ export default function Product({ currentItem }) {
 
                     <BreadCrumbs array={breadCrumbsCatalog} />
 
+                    {/* {currentProduct && */}
+
                     <div className={styles.cardWrapper}>
                         <div className={`${styles.cardSwiper} ${styles.cardSwiperMain}`}>
 
@@ -170,6 +180,7 @@ export default function Product({ currentItem }) {
                             <Swiper
                                 {...paramsSwiper}
                                 spaceBetween={0}
+                                initialSlide={photoIndex}
                                 slidesPerView={1}
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[Navigation, Thumbs]}
@@ -178,19 +189,18 @@ export default function Product({ currentItem }) {
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
-                                        <SwiperSlide className={styles.swiperSlide} key={index}>
+                                        <SwiperSlide className={styles.swiperSlide} key={index}
+                                            onClick={() => {
+                                                setIsOpen(true);
+                                                setPhotoIndex(index);
+                                            }
+                                            }>
                                             <div className="card-card-img-container">
-                                                <Image
-                                                    className={styles.cardImage}
+                                                <Image className={styles.cardImage}
                                                     src={"https:" + item.fields.file.url}
                                                     layout="fill"
                                                     alt={item.fields.name}
-                                                    priority
-                                                    onClick={() => {
-                                                        setPhotoIndex(index);  // Установить индекс текущего изображения
-                                                        setIsOpen(true);       // Открыть lightbox
-                                                    }}
-                                                />
+                                                    priority />
                                             </div>
                                         </SwiperSlide>
                                     );
@@ -227,6 +237,10 @@ export default function Product({ currentItem }) {
                                 breakpoints={{
                                     0: {
                                         slidesPerView: 4,
+                                        spaceBetween: 20
+                                    },
+                                    500: {
+                                        slidesPerView: 5,
                                         spaceBetween: 20
                                     },
                                     500: {
@@ -370,24 +384,51 @@ export default function Product({ currentItem }) {
                                 }
 
                             </div>
-
-                            {isOpen && (
-                                <Lightbox
-                                    mainSrc={"https:" + currentItem.fields.media[photoIndex].fields.file.url}
-                                    nextSrc={"https:" + currentItem.fields.media[(photoIndex + 1) % currentItem.fields.media.length].fields.file.url}
-                                    prevSrc={"https:" + currentItem.fields.media[(photoIndex + currentItem.fields.media.length - 1) % currentItem.fields.media.length].fields.file.url}
-                                    onCloseRequest={() => setIsOpen(false)}  // Закрытие Lightbox
-                                    onMovePrevRequest={() =>
-                                        setPhotoIndex((photoIndex + currentItem.fields.media.length - 1) % currentItem.fields.media.length)
-                                    }
-                                    onMoveNextRequest={() =>
-                                        setPhotoIndex((photoIndex + 1) % currentItem.fields.media.length)
-                                    }
-                                />
-                            )}
                         </div>
                     </div>
-                </div>
+                </div >
+
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            className={styles.lightbox}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <button className={styles.closeButton} onClick={() => { setIsOpen(false) }} />
+                            <Swiper
+                                ref={swiperRef}
+                                {...paramsSwiper}
+                                spaceBetween={0}
+                                slidesPerView={1}
+                                modules={[Navigation]}
+                                initialSlide={photoIndex}
+                                loop={true}
+                                onSlideChange={handleSlideChangeTransitionEnd}
+                                className="swiperLightbox"
+                                touchEventsTarget="wrapper"  // Оставляем обработку событий касания для прокрутки слайдов
+                                simulateTouch={true}  // Включаем touch-события для листания
+                                allowTouchMove={true}  // Разрешаем перемещение слайдов при касаниях
+                            >
+                                {currentItem && currentItem.fields.media.map((item, index) => (
+                                    <SwiperSlide className={styles.swiperSlide} key={index}>
+                                        <div className="card-card-img-container" style={{ touchAction: 'manipulation' }}> {/* Разрешаем жесты на изображении */}
+                                            <Image
+                                                className={styles.cardLightboxImage}
+                                                src={"https:" + item.fields.file.url}
+                                                layout="fill"
+                                                alt={item.fields.name}
+                                                priority
+                                                style={{ touchAction: 'pinch-zoom' }}  // Позволяем нативный pinch-to-zoom на изображении
+                                            />
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 <Additions />
                 <Contacts product={true} />
