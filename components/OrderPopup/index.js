@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePopup } from '../PopupContext';
 import { useForm } from "react-hook-form";
@@ -93,7 +94,7 @@ export default function Popup() {
                                 className={styles.input}
                                 {...register("phone")}
                                 autoComplete="off" required />
-                            <span className={styles.signature}>*Мы не передаем личные данные третьим лицам</span>
+                            <span className={styles.signature}>*При нажатии на кнопку отправить заявку вы даете согласие на обработку <Link href='/policy' className={styles.policyLink} onClick={handleCloseClick}>персональных данных</Link></span>
 
                             <p className={styles.timeSignature}>Свяжемся с вами в течении 2 минут</p>
 

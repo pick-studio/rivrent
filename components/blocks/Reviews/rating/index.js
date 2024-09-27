@@ -1,11 +1,13 @@
 import React from 'react';
+import Company from '../company';
 import styles from './rating.module.scss';
 
 export default function Rating({ company, grade, numberOfReviews }) {
     return (
         <div className={styles.rating}>
             {/* Компания */}
-            <div className={`${styles.company} ${company === 'Yandex' ? styles.yandex : ''} ${company === 'Google' ? styles.google : ''} ${company === '2GIS' ? styles.gis : ''}`} />
+
+            <Company company={company} />
             <div className={styles.grade}>{grade}</div>
 
             <div className={styles.indicators}>

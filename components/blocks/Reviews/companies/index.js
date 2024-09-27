@@ -1,4 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import Company from '../company';
+
 import styles from './companies.module.scss';
 
 export default function Companies({ companiesList }) {
@@ -10,7 +12,7 @@ export default function Companies({ companiesList }) {
                         <div key={index} className={styles.companiesItem}>
                             <div className={styles.rating}>
                                 {/* Компания */}
-                                <div className={`${styles.company} ${item.company === 'Yandex' ? styles.yandex : ''} ${item.company === 'Google' ? styles.google : ''} ${item.company === '2GIS' ? styles.gis : ''}`} />
+                                <Company company={item.company} />
                                 <div className={styles.grade}>{item.grade}</div>
 
                                 <div className={styles.indicators}>

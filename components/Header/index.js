@@ -112,7 +112,13 @@ export default function Header() {
                                         <Link onClick={toggleMobileMenu} className={styles.headerMenuLink} href="/about">О нас</Link>
                                     </li>
                                     <li className={styles.headerMenuItem}>
-                                        <ScrollLink onClick={toggleMobileMenu} className={styles.headerMenuLink} to="contacts" spy={true} smooth={true} duration={800}>Контакты</ScrollLink>
+                                        <a href="#contacts" onClick={(e) => {
+                                            e.preventDefault();
+                                            document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
+                                            toggleMobileMenu();
+                                        }} className={styles.headerMenuLink}>
+                                            Контакты
+                                        </a>
                                     </li>
                                 </ul>
 

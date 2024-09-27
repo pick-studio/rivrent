@@ -5,7 +5,6 @@
 
 .titleContainer {
   padding-bottom: 50px;
-  border-bottom: 1px solid #111;
 
   animation-name: startAnimate;
   animation-fill-mode: both;
@@ -16,6 +15,7 @@
 .list {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid #111;
   padding: 0px;
   margin: 0px;
   list-style: none;
@@ -64,6 +64,31 @@
   }
 }
 
+.rentalTerms {
+  display: block;
+  padding-left: 35px;
+  position: relative;
+  line-height: 28px;
+}
+
+.rentalTerms strong {
+  font-weight: 500;
+}
+
+.rentalTerms::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+
+  background-image: url("../../public/img/icons/circle-alert.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @media screen and (min-width: 0px) and (max-width: 1000px) {
   .item {
     padding-top: 25px;
@@ -103,5 +128,19 @@
     font-size: 18px;
     line-height: 28px;
     text-transform: uppercase;
+  }
+
+  .rentalTerms::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translateY(0);
+    width: 25px;
+    height: 25px;
+
+    background-image: url("../../public/img/icons/circle-alert.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }

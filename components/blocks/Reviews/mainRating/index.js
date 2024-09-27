@@ -1,17 +1,34 @@
 import React from 'react';
+import Company from '../company';
 import styles from './mainRating.module.scss';
 
-export default function MainRating({ company, grade, numberOfReviews }) {
-    return (
-        <a href='#rating' className={styles.rating}>
-            {/* Компания */}
-            <div className={`${styles.company} ${company === 'Yandex' ? styles.yandex : ''} ${company === 'Google' ? styles.google : ''} ${company === '2GIS' ? styles.gis : ''}`} />
-            <div className={`${styles.company} ${styles.google}`} />
-            <div className={`${styles.company} ${styles.gis}`} />
-            {/* Вытащить те которые уже есть */}
+export default function MainRating({ companies }) {
 
-            <div className={styles.grade}>{grade}</div>
-            {/* Вычислить среднюю оценку из всех */}
+    // Вычисляем среднее значение grade
+    const roundedAverageGrade = (companies.reduce((sum, company) => sum + parseFloat(company.grade), 0) / companies.length).toFixed(1);
+
+    // Складываем все отзывы
+    const totalReviews = companies.reduce((sum, company) => {
+        const reviews = parseInt(company.numberOfReviews); // Извлекаем число из строки
+        return sum + reviews;
+    }, 0);
+
+    return (
+        <a href="#rating" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('rating').scrollIntoView({ behavior: 'smooth' });
+        }} className={styles.rating}>
+            {/* Компания */}
+
+            {companies && companies.map((item, index) => {
+                return (
+                    <Company company={item.company} />
+                )
+            })}
+            {/* Вытащить те которые уже есть */}
+            {roundedAverageGrade &&
+                <div className={styles.grade}>{roundedAverageGrade}</div>
+            }
 
             <div className={styles.indicators}>
                 {/* Звезды */}
@@ -33,7 +50,9 @@ export default function MainRating({ company, grade, numberOfReviews }) {
                     </svg>
                 </div>
                 {/* Отзывы */}
-                <div className={styles.numbers}>160 отзывов</div>
+                {totalReviews &&
+                    <div className={styles.numbers}>более {totalReviews} отзывов</div>
+                }
                 {/* Сделать сложение отзывов которые уже есть */}
             </div>
         </a>

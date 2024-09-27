@@ -47,7 +47,7 @@ export const data = {
             numberOfReviews: '43 отзыва'
         },
         {
-            company: 'Google',
+            company: 'Avito',
             grade: '4.9',
             numberOfReviews: '42 отзыва'
         },

@@ -1,0 +1,28 @@
+.company {
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 0px;
+  width: 35px;
+  height: 35px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.company.yandex {
+  background-image: url("../../../../public/img/reviews/yandex.webp");
+}
+
+.company.google {
+  background-image: url("../../../../public/img/reviews/google.webp");
+}
+
+.company.gis {
+  background-image: url("../../../../public/img/reviews/gis.webp");
+}
+
+.company.avito {
+  background-image: url("../../../../public/img/reviews/avito.webp");
+}

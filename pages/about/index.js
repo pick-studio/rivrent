@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import oneImage from '../../public/img/about/third.jpg';
 import twoImage from '../../public/img/about/second.jpg';
 import threeImage from '../../public/img/about/first.jpg';
+import Reviews from '@/components/blocks/Reviews';
 
 export default function AboutSection({ button = false }) {
     return (
@@ -106,6 +107,7 @@ export default function AboutSection({ button = false }) {
 
             <Process />
             <Additions />
+            <Reviews />
             <Contacts />
         </>
     )

@@ -40,6 +40,8 @@ export default function Services() {
                             <p className='subTitle'>Круглосуточная доставка по городу и области</p>
                         </div>
 
+                        <p className={styles.rentalTerms}><strong>Аренда автомобиля возможна только при условии достижения водителем возраста 23-х лет и стажа вождения от 3-х лет</strong></p>
+
                         <ul className={styles.list}>
                             <li className={styles.item}>
                                 <h3 className={styles.itemTitle}>

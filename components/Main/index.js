@@ -55,7 +55,7 @@ export default function Main() {
                         </div>
                     </div>
 
-                    <MainRating company={data.company} grade={data.grade} numberOfReviews={data.numberOfReviews} />
+                    <MainRating companies={data.companiesList} />
                 </div>
             </section >
         </>

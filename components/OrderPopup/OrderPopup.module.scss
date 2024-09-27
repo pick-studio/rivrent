@@ -462,6 +462,14 @@
   z-index: 0;
 }
 
+.policyLink {
+  color: #999;
+}
+
+.policyLink:hover {
+  color: #111;
+}
+
 @media screen and (min-width: 0px) and (max-width: 900px) {
   .catalog {
     padding-top: 50px;

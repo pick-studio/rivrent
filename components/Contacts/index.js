@@ -59,7 +59,7 @@ export default function Footer({ product }) {
     }
 
     return (
-        <Element name="contacts">
+        <Element id="contacts">
             <section>
                 <footer className={styles.contacts}>
                     <div className="container">

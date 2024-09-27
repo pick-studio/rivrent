@@ -5,6 +5,8 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
 import { usePopup } from '../../components/PopupContext';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -65,16 +67,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Product({ currentItem }) {
-    const [isOpen, setIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
-
-    const handleSlideChangeTransitionEnd = () => {
-        // Получаем индекс активного слайда
-        const swiper = document.querySelector('.swiperLightbox').swiper;
-        setPhotoIndex(swiper.realIndex);
-    };
-
-    const swiperRef = useRef(null);
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -180,7 +173,6 @@ export default function Product({ currentItem }) {
                             <Swiper
                                 {...paramsSwiper}
                                 spaceBetween={0}
-                                initialSlide={photoIndex}
                                 slidesPerView={1}
                                 thumbs={{ swiper: thumbsSwiper }}
                                 modules={[Navigation, Thumbs]}
@@ -189,18 +181,15 @@ export default function Product({ currentItem }) {
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => {
                                     return (
-                                        <SwiperSlide className={styles.swiperSlide} key={index}
-                                            onClick={() => {
-                                                setIsOpen(true);
-                                                setPhotoIndex(index);
-                                            }
-                                            }>
+                                        <SwiperSlide className={styles.swiperSlide} key={index}>
                                             <div className="card-card-img-container">
-                                                <Image className={styles.cardImage}
-                                                    src={"https:" + item.fields.file.url}
-                                                    layout="fill"
-                                                    alt={item.fields.name}
-                                                    priority />
+                                                <Zoom>
+                                                    <Image className={styles.cardImage}
+                                                        src={"https:" + item.fields.file.url}
+                                                        layout="fill"
+                                                        alt={item.fields.name}
+                                                        priority />
+                                                </Zoom>
                                             </div>
                                         </SwiperSlide>
                                     );
@@ -386,70 +375,7 @@ export default function Product({ currentItem }) {
                             </div>
                         </div>
                     </div>
-                </div >
-
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            className={styles.lightbox}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <button className={styles.closeButton} onClick={() => { setIsOpen(false) }} />
-                            <Swiper
-                                ref={swiperRef}
-                                {...paramsSwiper}
-                                spaceBetween={0}
-                                slidesPerView={1}
-                                modules={[Navigation]}
-                                initialSlide={photoIndex}
-                                loop={true}
-                                onSlideChange={handleSlideChangeTransitionEnd}
-                                className="swiperLightbox"
-                            >
-                                {currentItem && currentItem.fields.media.map((item, index) => {
-                                    return (
-                                        <SwiperSlide className={styles.swiperSlide}
-                                            key={index}
-                                        >
-                                            <div className="card-card-img-container">
-                                                <Image className={styles.cardLightboxImage}
-                                                    src={"https:" + item.fields.file.url}
-                                                    layout="fill"
-                                                    alt={item.fields.name}
-                                                    priority />
-                                            </div>
-                                        </SwiperSlide>
-                                    );
-                                })}
-
-                                {currentItem && currentItem.fields.media.length > 1 &&
-                                    <>
-                                        <motion.div
-                                            className={`${styles.buttonArrowContainer} ${styles.left}`}
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
-                                            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                            <div className="swiper-arrow-prev" />
-                                        </motion.div>
-
-                                        <motion.div
-                                            className={`${styles.buttonArrowContainer} ${styles.right}`}
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
-                                            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                                            <div className="swiper-arrow-next" />
-                                        </motion.div>
-
-                                        <div className="swiper-pagination" />
-                                    </>
-                                }
-
-                            </Swiper>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                </div>
 
                 <Additions />
                 <Contacts product={true} />
