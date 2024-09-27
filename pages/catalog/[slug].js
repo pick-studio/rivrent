@@ -206,7 +206,7 @@ export default function Product({ currentItem }) {
                                     );
                                 })}
 
-                                {currentItem && currentItem.fields.media.length > 1 &&
+                                {/* {currentItem && currentItem.fields.media.length > 1 &&
                                     <>
                                         <motion.div
                                             className={`${styles.buttonArrowContainer} ${styles.left}`}
@@ -226,7 +226,7 @@ export default function Product({ currentItem }) {
 
                                         <div className="swiper-pagination" />
                                     </>
-                                }
+                                } */}
 
                             </Swiper>
 
@@ -407,29 +407,45 @@ export default function Product({ currentItem }) {
                                 loop={true}
                                 onSlideChange={handleSlideChangeTransitionEnd}
                                 className="swiperLightbox"
-                                touchEventsTarget="container"  // Оставляем касания внутри контейнера
-                                simulateTouch={true}  // Включаем touch-события для листания
-                                allowTouchMove={true}  // Разрешаем прокрутку слайдов при касаниях
                             >
-                                {currentItem && currentItem.fields.media.map((item, index) => (
-                                    <SwiperSlide className={styles.swiperSlide} key={index}>
-                                        <div
-                                            className="card-card-img-container"
-                                            style={{
-                                                touchAction: 'pinch-zoom',  // Позволяем жесты pinch-to-zoom для изображений
-                                                overflow: 'hidden',  // Убеждаемся, что изображение не выходит за пределы контейнера
-                                            }}
+                                {currentItem && currentItem.fields.media.map((item, index) => {
+                                    return (
+                                        <SwiperSlide className={styles.swiperSlide}
+                                            key={index}
                                         >
-                                            <Image
-                                                className={styles.cardLightboxImage}
-                                                src={"https:" + item.fields.file.url}
-                                                layout="fill"
-                                                alt={item.fields.name}
-                                                priority
-                                            />
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
+                                            <div className="card-card-img-container">
+                                                <Image className={styles.cardLightboxImage}
+                                                    src={"https:" + item.fields.file.url}
+                                                    layout="fill"
+                                                    alt={item.fields.name}
+                                                    priority />
+                                            </div>
+                                        </SwiperSlide>
+                                    );
+                                })}
+
+                                {currentItem && currentItem.fields.media.length > 1 &&
+                                    <>
+                                        <motion.div
+                                            className={`${styles.buttonArrowContainer} ${styles.left}`}
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                            <div className="swiper-arrow-prev" />
+                                        </motion.div>
+
+                                        <motion.div
+                                            className={`${styles.buttonArrowContainer} ${styles.right}`}
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                                            <div className="swiper-arrow-next" />
+                                        </motion.div>
+
+                                        <div className="swiper-pagination" />
+                                    </>
+                                }
+
                             </Swiper>
                         </motion.div>
                     )}
