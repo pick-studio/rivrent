@@ -407,20 +407,25 @@ export default function Product({ currentItem }) {
                                 loop={true}
                                 onSlideChange={handleSlideChangeTransitionEnd}
                                 className="swiperLightbox"
-                                touchEventsTarget="wrapper"  // Оставляем обработку событий касания для прокрутки слайдов
+                                touchEventsTarget="container"  // Оставляем касания внутри контейнера
                                 simulateTouch={true}  // Включаем touch-события для листания
-                                allowTouchMove={true}  // Разрешаем перемещение слайдов при касаниях
+                                allowTouchMove={true}  // Разрешаем прокрутку слайдов при касаниях
                             >
                                 {currentItem && currentItem.fields.media.map((item, index) => (
                                     <SwiperSlide className={styles.swiperSlide} key={index}>
-                                        <div className="card-card-img-container" style={{ touchAction: 'manipulation' }}> {/* Разрешаем жесты на изображении */}
+                                        <div
+                                            className="card-card-img-container"
+                                            style={{
+                                                touchAction: 'pinch-zoom',  // Позволяем жесты pinch-to-zoom для изображений
+                                                overflow: 'hidden',  // Убеждаемся, что изображение не выходит за пределы контейнера
+                                            }}
+                                        >
                                             <Image
                                                 className={styles.cardLightboxImage}
                                                 src={"https:" + item.fields.file.url}
                                                 layout="fill"
                                                 alt={item.fields.name}
                                                 priority
-                                                style={{ touchAction: 'pinch-zoom' }}  // Позволяем нативный pinch-to-zoom на изображении
                                             />
                                         </div>
                                     </SwiperSlide>
