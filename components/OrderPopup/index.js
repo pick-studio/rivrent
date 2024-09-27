@@ -76,9 +76,6 @@ export default function Popup() {
                 >
                     <motion.div
                         className={styles.cardPopup}
-                        initial={{ translateY: 1200 }}
-                        animate={{ translateY: 0 }}
-                        exit={{ translateY: 1200 }}
                     >
                         <button className={styles.closeButton} onClick={handleCloseClick} />
                         <div className={styles.image} />

@@ -309,10 +309,12 @@
 
 @media screen and (min-width: 0px) and (max-width: 400px) {
   .mainTextContainer h1 {
-    font-size: 26px;
+    font-size: 22px;
+    max-width: 300px;
   }
 
   .mainTextContainer p {
     font-size: 16px;
+    max-width: 240px;
   }
 }

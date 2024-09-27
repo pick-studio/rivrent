@@ -51,9 +51,9 @@ const Background = () => {
             <video
                 ref={videoRef}
                 autoPlay
-                muted
-                loop
-                controls={false}
+                loop muted
+                preload="auto"
+                tabIndex="-1"
                 className={styles.video}
             >
                 <source data-src="https://rivrent.ru/video/background.mp4" type="video/mp4" />

@@ -100,7 +100,9 @@ export default function Home({ cars }) {
         <ScrollLine />
         <Popular carList={cars} />
         <Additions />
-        <Reviews />
+        <div className='reviewsContainer'>
+          <Reviews />
+        </div>
         <Process />
         <Background />
         <Advantages />

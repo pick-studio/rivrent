@@ -59,7 +59,7 @@ export default function MainRating({ companies }) {
 
                 {/* Отзывы */}
                 {totalReviews > 0 &&
-                    <div className={styles.numbers}>более {totalReviews} отзывов</div>
+                    <div className={styles.numbers}>{totalReviews} отзывов</div>
                 }
             </div>
         </a>

@@ -120,7 +120,7 @@
   }
 
   .titleContainer {
-    padding-bottom: 25px;
+    padding-bottom: 15px;
   }
 
   .item .itemTitle {
@@ -135,6 +135,29 @@
     position: absolute;
     left: 0px;
     top: 0px;
+    transform: translateY(0);
+    width: 25px;
+    height: 25px;
+
+    background-image: url("../../public/img/icons/circle-alert.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .rentalTerms {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .rentalTerms strong {
+    font-weight: 500;
+  }
+
+  .rentalTerms::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0;
     transform: translateY(0);
     width: 25px;
     height: 25px;

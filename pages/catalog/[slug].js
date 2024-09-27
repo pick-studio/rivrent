@@ -18,6 +18,7 @@ import 'swiper/css/thumbs';
 import styles from './CardProduct.module.scss';
 import Additions from "../../components/Additions";
 import Contacts from "../../components/Contacts";
+import Reviews from "../../components/blocks/Reviews";
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -165,7 +166,7 @@ export default function Product({ currentItem }) {
                     <div className={styles.cardWrapper}>
                         <div className={`${styles.cardSwiper} ${styles.cardSwiperMain}`}>
 
-                            {currentItem && currentItem.fields.youtubeVideo &&
+                            {/* {currentItem && currentItem.fields.youtubeVideo &&
                                 <div className={styles.buttonWrapper}>
                                     <motion.div
                                         className={styles.buttonVideoContainer}
@@ -175,7 +176,7 @@ export default function Product({ currentItem }) {
                                         <button className={styles.buttonVideo} onClick={() => openVideoPopup(currentItem && currentItem.fields.youtubeVideo)}>Видеообзор</button>
                                     </motion.div>
                                 </div>
-                            }
+                            } */}
 
                             <Swiper
                                 {...paramsSwiper}
@@ -206,7 +207,7 @@ export default function Product({ currentItem }) {
                                     );
                                 })}
 
-                                {/* {currentItem && currentItem.fields.media.length > 1 &&
+                                {currentItem && currentItem.fields.media.length > 1 &&
                                     <>
                                         <motion.div
                                             className={`${styles.buttonArrowContainer} ${styles.left}`}
@@ -226,7 +227,7 @@ export default function Product({ currentItem }) {
 
                                         <div className="swiper-pagination" />
                                     </>
-                                } */}
+                                }
 
                             </Swiper>
 
@@ -388,7 +389,7 @@ export default function Product({ currentItem }) {
                     </div>
                 </div >
 
-                <AnimatePresence>
+                {/* <AnimatePresence>
                     {isOpen && (
                         <motion.div
                             className={styles.lightbox}
@@ -449,7 +450,11 @@ export default function Product({ currentItem }) {
                             </Swiper>
                         </motion.div>
                     )}
-                </AnimatePresence>
+                </AnimatePresence> */}
+
+                <div className={styles.reviewsContainer}>
+                    <Reviews />
+                </div>
 
                 <Additions />
                 <Contacts product={true} />

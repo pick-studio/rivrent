@@ -4,8 +4,6 @@ import classnames from "classnames";
 
 import styles from "./Header.module.scss";
 
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
-
 import { useRouter } from 'next/router'
 
 export default function Header() {
