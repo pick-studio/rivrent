@@ -40,7 +40,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <span>RIV RENT © 2024</span>
+                        <span>Riv Rent © 2024</span>
                     </div>
 
                     <ul className={styles.menu}>
